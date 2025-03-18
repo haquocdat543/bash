@@ -11,3 +11,5 @@ source "${HOME}/bash/core/alias/package-manager/brew.sh"
 # Visualization
 source "${HOME}/bash/core/alias/visualization/treesitter.sh"
 
+# kubernetes
+source "${HOME}/bash/core/alias/kubernetes/k9s.sh"
