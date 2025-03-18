@@ -21,3 +21,6 @@ source "$(dirname "${BASH_SOURCE[0]}")/serverless/serverless.sh"
 
 # password
 source "$(dirname "${BASH_SOURCE[0]}")/password/pass.sh"
+
+# key
+source "$(dirname "${BASH_SOURCE[0]}")/key/gpg.sh"

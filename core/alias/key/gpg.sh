@@ -1,0 +1,13 @@
+### GPG key
+alias gpgae='gpg --armor --export'
+alias gpglk='gpg --list-keys'
+alias gpglsk='gpg --list-secret-keys'
+alias gpglkfl='gpg --list-secret-keys --keyid-format LONG'
+alias gpgfgk='gpg --full-generate-key'
+alias gpgpw='gpg --passwd'
+alias gpgim='gpg --import'
+alias gpgex='gpg --export --output'
+alias gpgexsk='gpg --export-secret-keys --output'
+alias gpgek='gpg --edit-key'
+alias gpgdk='gpg --delete-key'
+alias gpgdsk='gpg --delete-secret-key'
