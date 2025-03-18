@@ -1,0 +1,5 @@
+alias brep='brew bundle dump --file=Brewfile --describe'
+alias bri='brew install'
+alias brr='brew remove'
+alias bru='brew upgrade'
+alias brc='brew cleanup'
