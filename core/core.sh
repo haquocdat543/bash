@@ -1,1 +1,1 @@
-source "${HOME}/bash/core/alias/alias.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/alias/alias.sh"
