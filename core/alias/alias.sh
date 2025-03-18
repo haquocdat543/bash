@@ -18,3 +18,6 @@ source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/vela.sh"
 
 # serverless
 source "$(dirname "${BASH_SOURCE[0]}")/serverless/serverless.sh"
+
+# password
+source "$(dirname "${BASH_SOURCE[0]}")/password/pass.sh"
