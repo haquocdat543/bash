@@ -1,3 +1,4 @@
+# Tmux
 alias tml='tmux ls'
 alias tma='tmux attach -t'
 alias tmr='tmux rename-session -t'
