@@ -1,1 +1,1 @@
-source ./alias/alias.sh
+source alias/alias.sh

@@ -1,1 +1,1 @@
-source ./core/core.sh
+source core/core.sh
