@@ -1,1 +1,1 @@
-source alias/alias.sh
+source "${HOME}/bash/core/alias/alias.sh"

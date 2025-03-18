@@ -1,13 +1,13 @@
 # Navigation
-source navigation/tmux.sh
-source navigation/screen.sh
+source "${HOME}/bash/core/alias/navigation/tmux.sh"
+source "${HOME}/bash/core/alias/navigation/screen.sh"
 
 # OS
-source os/linux.sh
+source "${HOME}/bash/core/alias/os/linux.sh"
 
 # Package manager
-source package-manager/brew.sh
+source "${HOME}/bash/core/alias/package-manager/brew.sh"
 
 # Visualization
-source visualization/treesitter.sh
+source "${HOME}/bash/core/alias/visualization/treesitter.sh"
 

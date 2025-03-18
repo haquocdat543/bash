@@ -1,1 +1,1 @@
-source core/core.sh
+source "${HOME}/bash/core/core.sh"
