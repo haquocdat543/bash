@@ -15,3 +15,6 @@ source "${HOME}/bash/core/alias/visualization/treesitter.sh"
 source "${HOME}/bash/core/alias/kubernetes/k9s.sh"
 source "${HOME}/bash/core/alias/kubernetes/kind.sh"
 source "${HOME}/bash/core/alias/kubernetes/vela.sh"
+
+# serverless
+source "${HOME}/bash/core/alias/serverless/serverless.sh"
