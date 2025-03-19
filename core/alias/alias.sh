@@ -45,6 +45,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/password/pass.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/gpg.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/sops.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/gitleak.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/security/cosign.sh"
 
 # Programming
 source "$(dirname "${BASH_SOURCE[0]}")/programming/c.sh"
