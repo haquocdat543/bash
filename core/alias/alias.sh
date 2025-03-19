@@ -24,6 +24,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/yarn.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/poetry.sh"
 
 # Visualization
+source "$(dirname "${BASH_SOURCE[0]}")/visualization/bat.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 
 # git
