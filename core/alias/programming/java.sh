@@ -16,3 +16,8 @@ alias gdlt='gradle test'
 alias gdltk='gradle tasks'
 alias gdlc='gradle clean'
 alias gdla='gradle assemble'
+
+### Java
+alias jv='java'
+alias jvv='java -version'
+
