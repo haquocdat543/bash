@@ -1,0 +1,10 @@
+### Gitlab command
+alias glal='glab auth login'
+alias glrl='glab repo list'
+alias glrc='glab repo create'
+alias glrcl='glab repo clone'
+alias glrd='glab repo delete'
+alias glvs='glab variable set'
+alias glvd='glab variable delete'
+alias glvl='glab variable list'
+alias glvu='glab variable update'
