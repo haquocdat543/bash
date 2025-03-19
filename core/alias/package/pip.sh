@@ -27,3 +27,8 @@ alias pigs='pip install gensim'
 alias piscikit='pip install scikit-learn'
 alias pigv='pip install graphviz'
 alias pidgr='pip install diagrams'
+
+### Pip3
+alias pi3='pip3'
+alias pi3i='pip3 install'
+alias pi3ive='pip3 install virtualenv'
