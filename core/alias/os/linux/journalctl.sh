@@ -1,4 +1,4 @@
-### Journalctl command
+### JOURNALCTL
 alias jnl='journalctl'
 alias jnlb='journalctl -b'
 alias jnlu='journalctl -u'
