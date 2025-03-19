@@ -1,0 +1,2 @@
+## UUID
+alias uuid='uuidgen'
