@@ -1,0 +1,2 @@
+### Exit
+alias ex="exit"
