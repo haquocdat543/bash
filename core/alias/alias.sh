@@ -27,6 +27,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
 # Infrastructure
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/vagrant.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ansible.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/pulumi.sh"
 
 # Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
