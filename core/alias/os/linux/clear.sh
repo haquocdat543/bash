@@ -1,0 +1,2 @@
+### clear
+alias cl='clear'
