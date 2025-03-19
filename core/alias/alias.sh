@@ -81,6 +81,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/programming/java.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/ruby.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/haskell.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/rust.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/programming/php.sh"
 
 # Blockchain
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gm.sh"
