@@ -115,4 +115,5 @@ source "$(dirname "${BASH_SOURCE[0]}")/blockchain/hermes.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gaia.sh"
 
 # Generation
+source "$(dirname "${BASH_SOURCE[0]}")/generation/key.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/generation/random.sh"
