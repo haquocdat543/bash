@@ -41,6 +41,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/container/docker.sh"
 # Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/helm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/vela.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/hetzner.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/argocd.sh"
