@@ -30,6 +30,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/poetry.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/conan.sh"
 
 # Visualization
+source "$(dirname "${BASH_SOURCE[0]}")/visualization/ps.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/bat.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 
