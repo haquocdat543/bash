@@ -15,6 +15,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/pacman.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/apk.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/pip.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/package/poetry.sh"
 
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
