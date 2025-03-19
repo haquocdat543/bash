@@ -12,6 +12,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 
+# cloud
+source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
+
 # kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
