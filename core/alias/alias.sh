@@ -1,7 +1,9 @@
 # Navigation
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/pet.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/navi.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/navigation/exa.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/fzf.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/navigation/ag.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/vim.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/doc.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/data.sh"
