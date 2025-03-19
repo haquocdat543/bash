@@ -9,6 +9,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/os/linux.sh"
 # Package manager
 source "$(dirname "${BASH_SOURCE[0]}")/package/brew.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/pacman.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/package/apk.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 
 # Visualization
