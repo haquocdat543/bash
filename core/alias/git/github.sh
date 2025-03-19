@@ -1,0 +1,24 @@
+### Github
+alias ghal='gh auth login'
+alias ghrcl='gh repo clone'
+alias ghsa='gh ssh-key add'
+alias ghprc='gh pr create'
+alias ghprm='gh pr merge'
+alias ghrl='gh repo list'
+alias ghrf='gh repo fork'
+alias ghrr='gh repo rename'
+alias ghrc='gh repo create'
+alias ghrd='gh repo delete'                      # You must inside to that repo
+alias ghev='gh repo edit --visibility'           # You must inside to that repo
+alias ghevpu='gh repo edit --visibility public'  # You must inside to that repo
+alias ghevpr='gh repo edit --visibility private' # You must inside to that repo
+alias ghrv='gh repo view'
+alias ghre='gh repo edit'
+alias ghss='gh secret set'
+alias ghsl='gh secret list'
+alias ghsl='gh secret list'
+alias ghsde='gh secret delete -e'
+alias ghsd='gh secret delete'
+alias ghwl='gh workflow list'
+alias ghwv='gh workflow view'
+alias ghrr='gh repo rename'

@@ -12,10 +12,13 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 
-# cloud
+# git
+source "$(dirname "${BASH_SOURCE[0]}")/git/github.sh"
+
+# Cloud
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
 
-# kubernetes
+# Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/vela.sh"
@@ -28,13 +31,13 @@ source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kubens.sh"
 # CICD
 source "$(dirname "${BASH_SOURCE[0]}")/cicd/dagger.sh"
 
-# serverless
+# Serverless
 source "$(dirname "${BASH_SOURCE[0]}")/serverless/serverless.sh"
 
-# password
+# Password
 source "$(dirname "${BASH_SOURCE[0]}")/password/pass.sh"
 
-# key
+# Key
 source "$(dirname "${BASH_SOURCE[0]}")/security/gpg.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/sops.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/gitleak.sh"
