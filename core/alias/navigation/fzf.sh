@@ -1,0 +1,11 @@
+### FZF
+alias pf='fzf ${FZF_CTRL_T_OPTS}'
+alias fzz='filepath=$(pf) ; vim $filepath'
+alias fz='cd $(find . -type d -print | fzf)'
+alias fzl='cd $(find . -type d -print | fzf) ; ll'
+alias fzc='filepath=$(fzf) ; cp $filepath'
+alias fzcc='filepath=$(fzf) ; cp $filepath .'
+alias fzm='filepath=$(fzf) ; mv $filepath'
+alias fzmm='filepath=$(fzf) ; mv $filepath .'
+alias fzr='filepath=$(fzf) ; rm $filepath'
+alias fzrf='filepath=$(fzf) ; rf $filepath'
