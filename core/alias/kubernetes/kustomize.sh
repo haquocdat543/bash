@@ -1,0 +1,13 @@
+### Kustomization
+alias mdkz='md base ; md overlays'
+alias vikz='vim ./kustomization.yaml'
+alias kzi='kustomize init'
+alias kzb='kustomize build'
+alias kzbc='kustomize build .'
+alias kze='kustomize edit'
+alias kzef='kustomize edit fix'
+alias kzefv='kustomize edit fix --vars'
+alias kzcfg='kustomize cfg'
+alias kzcr='kustomize create'
+alias kzcp='kustomize complete'
+alias kzfn='kustomize fn'
