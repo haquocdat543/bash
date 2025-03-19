@@ -42,6 +42,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/cloud/gcp.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/do.sh"
 
 # Infrastructure
+source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/nginx.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/qemu.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/vagrant.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ansible.sh"
