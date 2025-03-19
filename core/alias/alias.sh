@@ -42,13 +42,15 @@ source "$(dirname "${BASH_SOURCE[0]}")/cloud/gcp.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/do.sh"
 
 # Infrastructure
+source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/redis.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/nginx.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ceph.sh"
+
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/qemu.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/vagrant.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ansible.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/chef.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/packer.sh"
-source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ceph.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/pulumi.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/terraform.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/terragrunt.sh"
