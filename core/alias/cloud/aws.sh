@@ -156,3 +156,12 @@ alias a2svcqtls='aws service-quotas list-requested-service-quota-change-history'
 alias svcqt='. $HOME/preconfig/Suitcase/bash/scripts/quotaRequest.sh'
 alias a2rtt='. $HOME/preconfig/Suitcase/bash/scripts/awsKeyRotate.sh'
 alias a2rttall='. $HOME/preconfig/Suitcase/bash/scripts/rotateAllProfiles.sh'
+
+### S3 command
+alias s3cf='s3cmd --configure'
+alias s3l='s3cmd ls'
+alias s3p='s3cmd put'
+alias s3g='s3cmd get'
+alias s3dl='. $HOME/preconfig/Suitcase/bash/scripts/s3_bucket_download.sh'
+alias s3ul='. $HOME/preconfig/Suitcase/bash/scripts/s3_object_copy.sh'
+alias s3ro='. $HOME/preconfig/Suitcase/bash/scripts/s3_object_remove.sh'
