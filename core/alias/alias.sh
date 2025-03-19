@@ -24,6 +24,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/git/gitlab.sh"
 # Cloud
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
 
+# Infrastructure
+source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/ansible.sh"
+
 # Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
