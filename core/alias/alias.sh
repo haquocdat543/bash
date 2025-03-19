@@ -6,6 +6,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/navigation/tmux.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/screen.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/ranger.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/clipboard.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/navigation/shutdown.sh"
 
 # OS
 source "$(dirname "${BASH_SOURCE[0]}")/os/os.sh"
