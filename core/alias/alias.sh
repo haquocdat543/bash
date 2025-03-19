@@ -22,6 +22,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/npm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/yarn.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/poetry.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/package/conan.sh"
 
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/bat.sh"
