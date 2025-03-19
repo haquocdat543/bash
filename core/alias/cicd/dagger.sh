@@ -1,0 +1,12 @@
+### Dagger
+alias dggrgr='dagger run go run'
+alias dgglg='dagger login'
+alias dgglo='dagger logout'
+alias dggcl='dagger call'
+alias dggcf='dagger config'
+alias dggde='dagger develop'
+alias dggf='dagger function'
+alias dggin='dagger init'
+alias dggis='dagger install'
+alias dggq='dagger query'
+alias dggr='dagger run'
