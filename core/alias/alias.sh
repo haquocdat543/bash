@@ -55,6 +55,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/container/docker.sh"
 # Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/minikube.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/helm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kubectl.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kustomize.sh"
