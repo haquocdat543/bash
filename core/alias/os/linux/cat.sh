@@ -1,0 +1,12 @@
+# cat
+alias catjk='sudo cat /var/lib/jenkins/secrets/initialAdminPassword'
+alias catr64='cat $HOME/.docker/config.json | base64'
+alias catshellmac='cat /private/etc/shells'
+alias cos='cat /etc/os-release'
+alias catapisv='cat /etc/kubernetes/manifests/kube-apiserver.yaml'
+alias catak='cat $HOME/.ssh/authorized_keys'
+alias rsapr='cat $HOME/.ssh/id_rsa'
+alias rsapu='cat $HOME/.ssh/id_rsa.pub'
+alias cpass='cat /etc/passwd'
+alias 25519pu='cat $HOME/.ssh/id_ed25519.pub'
+alias 25519pr='cat $HOME/.ssh/id_ed25519'
