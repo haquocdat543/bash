@@ -18,6 +18,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/vela.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/hetzner.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/argocd.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/flux.sh"
 
 # serverless
 source "$(dirname "${BASH_SOURCE[0]}")/serverless/serverless.sh"
