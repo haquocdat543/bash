@@ -1,0 +1,10 @@
+### hermes
+alias hrmcl='hermes clear'
+alias hrmclp='hermes clear packets'
+alias hrmucl='hermes update client'
+alias hrmccl='hermes create client'
+alias hrmcc='hermes create connection'
+alias hrmccn='hermes create channel'
+alias hrmka='hermes keys add'
+alias hrmcfa='hermes config auto --output $HOME/.hermes/config.toml --chain cosmoshub:keyhub osmosis:keyosmosis --chain'
+alias hrmhc='hermes health-check'
