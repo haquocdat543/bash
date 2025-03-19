@@ -20,6 +20,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/hetzner.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/argocd.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/flux.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kubectx.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kubens.sh"
 
 # CICD
 source "$(dirname "${BASH_SOURCE[0]}")/cicd/dagger.sh"
