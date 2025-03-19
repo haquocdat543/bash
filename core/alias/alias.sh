@@ -53,6 +53,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kubens.sh"
 
 # CICD
 source "$(dirname "${BASH_SOURCE[0]}")/cicd/dagger.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/cicd/circleci.sh"
 
 # Serverless
 source "$(dirname "${BASH_SOURCE[0]}")/serverless/serverless.sh"
