@@ -74,3 +74,12 @@ alias cddl='cd $HOME/Downloads'
 alias cdde='cd $HOME/Desktop'
 alias cdgpg='cd $HOME/.gnupg'
 alias cdssh='cd $HOME/.ssh'
+
+### Git
+alias cddg='cd $(git rev-parse --show-toplevel)/.git'
+alias cddgh='cd $(git rev-parse --show-toplevel)/.git/hooks'
+alias cddgi='cd $(git rev-parse --show-toplevel)/.git/info'
+alias cddgl='cd $(git rev-parse --show-toplevel)/.git/logs'
+alias cddgo='cd $(git rev-parse --show-toplevel)/.git/objects'
+alias cddgr='cd $(git rev-parse --show-toplevel)/.git/refs'
+alias cdgr='cd $(git rev-parse --show-toplevel)'
