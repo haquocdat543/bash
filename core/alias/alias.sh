@@ -24,3 +24,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/password/pass.sh"
 
 # key
 source "$(dirname "${BASH_SOURCE[0]}")/key/gpg.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/key/sops.sh"
