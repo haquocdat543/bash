@@ -17,6 +17,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 
 # git
+source "$(dirname "${BASH_SOURCE[0]}")/git/git.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/git/github.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/git/gitlab.sh"
 
