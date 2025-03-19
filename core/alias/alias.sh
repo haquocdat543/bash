@@ -23,6 +23,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/git/gitlab.sh"
 
 # Cloud
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/cloud/hetzner.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/azure.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/gcp.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/do.sh"
