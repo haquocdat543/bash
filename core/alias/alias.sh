@@ -6,7 +6,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/navigation/screen.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/navigation/clipboard.sh"
 
 # OS
-source "$(dirname "${BASH_SOURCE[0]}")/os/linux.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/os/os.sh"
 
 # Package manager
 source "$(dirname "${BASH_SOURCE[0]}")/package/nix.sh"
