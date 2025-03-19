@@ -63,6 +63,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/security/sops.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/gitleak.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/cosign.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/trivy.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/security/vault.sh"
 
 # Programming
 source "$(dirname "${BASH_SOURCE[0]}")/programming/c.sh"
