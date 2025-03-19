@@ -35,6 +35,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/pulumi.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/terraform.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/infrastructure/terragrunt.sh"
 
+# Container
+source "$(dirname "${BASH_SOURCE[0]}")/container/docker.sh"
+
 # Kubernetes
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/k9s.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/kubernetes/kind.sh"
