@@ -66,6 +66,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/security/gitleak.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/cosign.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/trivy.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/security/vault.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/security/certbot.sh"
 
 # Programming
 source "$(dirname "${BASH_SOURCE[0]}")/programming/c.sh"
