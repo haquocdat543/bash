@@ -7,6 +7,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/os/linux.sh"
 
 # Package manager
 source "$(dirname "${BASH_SOURCE[0]}")/package/brew.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/package/nvm.sh"
 
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
