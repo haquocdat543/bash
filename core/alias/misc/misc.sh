@@ -14,7 +14,6 @@ alias doom='git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.co
 alias spacemacs='git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d'
 alias proj='nigv ; vue create frontend ; cd frontend ; axios ; md src/services ; md src/routes ; mv src/components/HelloWorld.vue src/components/winners.vue ; touch src/routes/index.js ; touch src/services/Api.js ; touch src/services/winners.js ; cd - ; md server ; md server/src ; md server/src/models ; md server/src/routes ; cd server ; touch src/app.js ; touch src/models/winners.js ; touch src/routes/winners.js ; npmi ; mevn ; cd -'
 alias proj2='nigv ; vue create frontend ; cd frontend ; axios ; md src/services ; md src/routes ; mv src/components/HelloWorld.vue src/components/winners.vue ; touch src/routes/index.js ; touch src/services/Api.js ; touch src/services/winners.js ; cd - ; md server ; md server/src ; md server/src/models ; md server/src/routes ; cd server ; touch src/app.js ; touch src/models/winners.js ; touch src/routes/winners.js ; npmi ; pevn ; cd -'
-alias m='make'
 alias vuecf='vue create frontend'
 
 alias imc='imgcat'
@@ -268,28 +267,6 @@ alias ulmcu='ulimit -c unlimited'
 alias t2r='toml-to-req'
 alias t2rtf='toml-to-req --toml-file'
 alias t2rtfp='toml-to-req --toml-file pyproject.toml'
-
-### Make and automake
-alias mj='sudo make -j'
-alias mkb='sudo make build'
-alias mki='sudo make install'
-alias mkdcl='sudo make distclean'
-alias atm='automake'
-alias ath='autoheader'
-alias acl='aclocal'
-alias atc='autoconf'
-alias atg='autogen'
-alias atrf='autoreconf'
-alias atrfi='autoreconf --install'
-alias auto='acl ; ath ; atc ; atm'
-alias atmam='automake --add-missing'
-alias rcf='./configure'
-alias rcfb='./configure --prefix=/usr/local/bin'
-alias rcfbd='./configure --prefix=/usr/local/bin --disable-multilib'
-alias cmk='cmake'
-alias cmk..='cmake ../'
-alias cmkd='cmake -D'
-alias mkgcc='. $HOME/preconfig/Suitcase/bash/scripts/makeGcc.sh'
 
 ### d2
 alias d2w='d2 -w' # d2 -w input.d2 out.svg

@@ -111,6 +111,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/programming/rust.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/php.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/python.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/node.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/programming/make.sh"
 
 # Blockchain
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gm.sh"
