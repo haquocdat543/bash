@@ -1,0 +1,236 @@
+#!/bin/bash
+
+# Color
+BLACK='\033[0;30m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+GRAY='\033[0;37m'
+GRAY2='\033[1;30m'
+RED2='\033[1;31m'
+GREEN2='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE2='\033[1;34m'
+PURPLE2='\033[1;35m'
+CYAN2='\033[1;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+
+# Setup basic directory information
+IDEA_DIRECTORY="${HOME}/.idea"
+IDEA_GIT_DIRECTORY="${HOME}/.idea/.git"
+LIFE_DIRECTORY="life"
+WEEK_DIRECTORY="week"
+MONTH_DIRECTORY="month"
+YEAR_DIRECTORY="year"
+DAILY_DIRECTORY="daily"
+
+# options & arguments
+COMMAND="${1}"
+OPTION="${2}"
+ARGUMENT="${3}"
+
+# --today ->> today
+# --day ->> specific date
+# --range ->> from date to date
+
+# date & time
+CURRENT_DATE=$(date "+%d-%m-%Y")
+CURRENT_DAY=$(date "+%d")
+CURRENT_MONTH=$(date "+%m")
+CURRENT_YEAR=$(date "+%Y")
+CURRENT_TIME=$(date "+%H:%M:%S")
+CURRENT_DATETIME=$(date "+%d-%m-%Y|%H:%M:%S")
+
+# Today variables
+CURRENT_DATETIME_DIRECTORY="${IDEA_DIRECTORY}/$(date "+%d-%m-%Y|%H:%M:%S")"
+CURRENT_DATE_DIRECTORY="${IDEA_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DAY}"
+CURRENT_TIME_FILE="${IDEA_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DAY}/$(date "+%H:%M:%S")"
+
+function day {
+	local INPUT=${1}
+
+	# date formats:
+	# 20/10/2024 [ full ]
+	# 20/10 [ current year ]
+	# 20 [ current month and year ]
+
+	YEAR_MONTH_DAY_PATTERN="^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}$"
+	MONTH_DAY_PATTERN="^[0-9]{1,2}/[0-9]{1,2}$"
+	DAY_PATTERN="^[0-9]{1,2}$"
+
+	if [[ ${INPUT} =~ ${YEAR_MONTH_DAY_PATTERN} ]]; then
+		DATE=${INPUT}
+	elif [[ ${INPUT} =~ ${MONTH_DAY_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		DATE="${CURRENT_YEAR}/${INPUT}"
+	elif [[ ${INPUT} =~ ${DAY_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		CURRENT_MONTH=$(date "+%m")
+		DATE="${CURRENT_YEAR}/${CURRENT_MONTH}/${INPUT}"
+	else
+		echo "Invalid date format."
+		return 1
+	fi
+
+	echo "Parsed date: ${DATE}"
+}
+
+function month {
+	local INPUT=${1}
+
+	# date formats:
+	# 10/2024 [ full type ]
+	# 10 [ current year ]
+
+	YEAR_MONTH_PATTERN="^[0-9]{1,2}/[0-9]{4}$"
+	MONTH_PATTERN="^[0-9]{1,2}$"
+
+	if [[ ${INPUT} =~ ${MONTH_YEAR_PATTERN} ]]; then
+		DATE=${INPUT}
+	elif [[ ${INPUT} =~ ${MONTH_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		DATE="${CURRENT_YEAR}/${INPUT}"
+		els
+		echo "Invalid month format."
+		return 1
+	fi
+
+	echo "Parsed month: ${DATE}"
+}
+
+function day_range {
+	local FIRST_INPUT=${1}
+	local SECOND_INPUT=${2}
+
+	day ${FIRST_INPUT}
+	FIRST_DATE=${DATE}
+	day ${SECOND_INPUT}
+	SECOND_DATE=${DATE}
+}
+
+function check {
+
+	if [[ ! -d ${IDEA_DIRECTORY} ]]; then
+		echo "Your ${IDEA_DIRECTORY} directory does not exist"
+		echo "Exiting..."
+		exit
+		if [[ ! -d ${IDEA_GIT_DIRECTORY} ]]; then
+			echo "Your ${IDEA_DIRECTORY} is not a git directory"
+			echo "Exiting..."
+			exit
+		else
+			echo "Git exists in idea directory"
+		fi
+	else
+		echo "Idea directory exist"
+	fi
+}
+
+function list {
+
+	local OPTION=${1}
+	local ARGUMENT=${2}
+	# today [ default ]
+
+	if [[ -z ${OPTION} ]]; then
+		IDEAS=$(ls ${CURRENT_DATE_DIRECTORY})
+		echo "Today [${CURRENT_DATE}]"
+		INDEX=1
+		for TIME in ${IDEAS}; do
+			CONTENT=$(cat ${CURRENT_DATE_DIRECTORY}/${TIME})
+			echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}: ${GREEN}[${CONTENT}]${NC}"
+			INDEX=$((${INDEX} + 1))
+		done
+
+	# day [ specific date ]
+	elif [[ ${OPTION} == "day" ]]; then
+		day ${ARGUMENT}
+		SPECIFIC_DATE=${DATE}
+		SPECIFIC_DATE_DIRECTORY="${IDEA_DIRECTORY}/${SPECIFIC_DATE}"
+
+		# check specific date directory
+		if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+			echo "Date [${SPECIFIC_DATE}] does not contain anything"
+		else
+			IDEAS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+			echo "Date [${CURRENT_DATE}]"
+			INDEX=1
+			for TIME in ${IDEAS}; do
+				CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}: ${GREEN}[${CONTENT}]${NC}"
+				INDEX=$((${INDEX} + 1))
+			done
+		fi
+	elif [[ ${OPTION} == "month" ]]; then
+		if [[ -z ${ARGUMENT} ]]; then
+			SPECIFIC_MONTH_DIRECTORY="${IDEA_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}"
+			DAYS=$(ls ${SPECIFIC_MONTH_DIRECTORY})
+			for DAY in ${DAYS}; do
+				SPECIFIC_DATE="${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				SPECIFIC_DATE_DIRECTORY="${IDEA_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				IDEAS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+				echo "Date [${SPECIFIC_DATE}]"
+				INDEX=1
+				for TIME in ${IDEAS}; do
+					CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+					echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}: ${GREEN}[${CONTENT}]${NC}"
+					INDEX=$((${INDEX} + 1))
+				done
+			done
+		fi
+	fi
+	# range [ date to date ]
+
+}
+
+function add {
+
+	echo "Please enter idea"
+	read IDEA
+	mkdir -p ${CURRENT_DATE_DIRECTORY}
+	echo ${IDEA} >>${CURRENT_TIME_FILE}
+	git -C ${IDEA_DIRECTORY} add ${CURRENT_TIME_FILE}
+	git -C ${IDEA_DIRECTORY} commit -m "Add new idea @ ${CURRENT_DATETIME}"
+}
+
+function push {
+	git -C ${IDEA_DIRECTORY} push
+}
+
+function pull {
+	git -C ${IDEA_DIRECTORY} pull --rebase
+}
+
+case ${COMMAND} in
+"add")
+	echo "### [ADD NEW IDEA] ###"
+	check
+	add
+	;;
+"list" | "Wednesday" | "Thursday")
+	echo "### [LIST IDEAS] ###"
+	check
+	list ${OPTION} ${ARGUMENT}
+	;;
+"push")
+	echo "### [PUSH IDEAS] ###"
+	check
+	push
+	;;
+"pull")
+	echo "### [PULL IDEAS] ###"
+	check
+	pull
+	;;
+*)
+	echo "Options guideline"
+	echo "add: to add new idea"
+	echo "list: to list today ideas"
+	echo "push: to push ideas"
+	echo "pull[rebase]: to pull ideas"
+	;;
+esac

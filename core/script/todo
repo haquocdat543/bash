@@ -1,0 +1,683 @@
+#!/bin/bash
+
+# Color
+BLACK='\033[0;30m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+GRAY='\033[0;37m'
+GRAY2='\033[1;30m'
+RED2='\033[1;31m'
+GREEN2='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE2='\033[1;34m'
+PURPLE2='\033[1;35m'
+CYAN2='\033[1;36m'
+WHITE='\033[1;37m'
+NC='\033[0m' # No Color
+
+# Setup basic directory information
+TODO_DIRECTORY="${HOME}/.todo"
+TODO_GIT_DIRECTORY="${HOME}/.todo/.git"
+LIFE_DIRECTORY="life"
+WEEK_DIRECTORY="week"
+MONTH_DIRECTORY="month"
+YEAR_DIRECTORY="year"
+DAILY_DIRECTORY="daily"
+
+# options & arguments
+COMMAND="${1}"
+OPTION="${2}"
+ARGUMENT="${3}"
+TIME="${2}"
+
+# --today ->> today
+# --day ->> specific date
+# --range ->> from date to date
+
+# date & time
+CURRENT_DATE=$(date "+%Y/%m/%d")
+CURRENT_DAY=$(date "+%d")
+CURRENT_MONTH=$(date "+%m")
+CURRENT_YEAR=$(date "+%Y")
+CURRENT_TIME=$(date "+%H:%M:%S")
+CURRENT_DATETIME=$(date "+%Y/%m/%d|%H:%M:%S")
+
+# Today variables
+CURRENT_DATETIME_DIRECTORY="${TODO_DIRECTORY}/$(date "+%d/%m/%Y|%H:%M:%S")"
+CURRENT_DATE_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DAY}"
+CURRENT_TIME_FILE="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DAY}/$(date "+%H:%M:%S").yaml"
+
+function day {
+	local INPUT=${1}
+
+	# date formats:
+	# 20/10/2024 [ full ]
+	# 20/10 [ current year ]
+	# 20 [ current month and year ]
+
+	YEAR_MONTH_DAY_PATTERN="^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}$"
+	MONTH_DAY_PATTERN="^[0-9]{1,2}/[0-9]{1,2}$"
+	DAY_PATTERN="^[0-9]{1,2}$"
+
+	if [[ ${INPUT} =~ ${YEAR_MONTH_DAY_PATTERN} ]]; then
+		DATE=${INPUT}
+	elif [[ ${INPUT} =~ ${MONTH_DAY_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		DATE="${CURRENT_YEAR}/${INPUT}"
+	elif [[ ${INPUT} =~ ${DAY_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		CURRENT_MONTH=$(date "+%m")
+		DATE="${CURRENT_YEAR}/${CURRENT_MONTH}/${INPUT}"
+	else
+		echo "Invalid date format."
+		return 1
+	fi
+
+	echo "Parsed date: ${DATE}"
+}
+
+function month {
+	local INPUT=${1}
+
+	# date formats:
+	# 10/2024 [ full type ]
+	# 10 [ current year ]
+
+	YEAR_MONTH_PATTERN="^[0-9]{1,2}/[0-9]{4}$"
+	MONTH_PATTERN="^[0-9]{1,2}$"
+
+	if [[ ${INPUT} =~ ${MONTH_YEAR_PATTERN} ]]; then
+		DATE=${INPUT}
+	elif [[ ${INPUT} =~ ${MONTH_PATTERN} ]]; then
+		CURRENT_YEAR=$(date "+%Y")
+		DATE="${CURRENT_YEAR}/${INPUT}"
+		els
+		echo "Invalid month format."
+		return 1
+	fi
+
+	echo "Parsed month: ${DATE}"
+}
+
+function day_range {
+	local FIRST_INPUT=${1}
+	local SECOND_INPUT=${2}
+
+	day ${FIRST_INPUT}
+	FIRST_DATE=${DATE}
+	day ${SECOND_INPUT}
+	SECOND_DATE=${DATE}
+}
+
+function datetime_operate {
+	# input
+	local INPUT1=${1}
+	local INPUT2=${2}
+
+	# First date-time: 2024-10-19 14:30:00
+	EPOCH1=$(date -j -f "%Y/%m/%d|%H:%M:%S" "${INPUT1}" "+%s")
+
+	# Second date-time: 2024-10-10 10:15:00
+	EPOCH2=$(date -j -f "%Y/%m/%d|%H:%M:%S" "${INPUT2}" "+%s")
+
+	# Add the two epoch times
+	TOTAL_EPOCH=$((EPOCH1 - EPOCH2))
+
+	# Convert the total seconds back to a human-readable date-time
+	FINAL_DATE=$(date -r "$TOTAL_EPOCH" "+%Y/%m/%d|%H:%M:%S")
+
+	# Convert the total seconds back to a human-readable date-time
+	if [[ ${TOTAL_EPOCH} -gt 0 ]]; then
+		echo "Date-time is greater than the Unix epoch start (1970-01-01 00:00:00)."
+	else
+		echo "Date-time is before the Unix epoch start."
+	fi
+}
+
+function datetime_compare {
+	### input
+	# current
+	local INPUT1=${1}
+	# deadline
+	local INPUT2=${2}
+
+	# First date-time: 2024-10-19 14:30:00
+	EPOCH1=$(date -j -f "%Y/%m/%d|%H:%M:%S" "${INPUT1}" "+%s")
+
+	# Second date-time: 2024-10-10 10:15:00
+	EPOCH2=$(date -j -f "%Y/%m/%d|%H:%M:%S" "${INPUT2}" "+%s")
+
+	# missed time
+	SEVEN_HOURS=25200
+	MISSED_TIME=$(date -r "$((EPOCH1 - EPOCH2 - SEVEN_HOURS))" "+%Y/%m/%d|%H:%M:%S")
+	FINISH_TIME=$(date -r "$((EPOCH1 - EPOCH2 - SEVEN_HOURS))" "+%Y/%m/%d|%H:%M:%S")
+	REMAIN_TIME=$(date -r "$((EPOCH2 - EPOCH1 - SEVEN_HOURS))" "+%Y/%m/%d|%H:%M:%S")
+
+	# Compare the two epoch values
+	if [[ $EPOCH1 -gt $EPOCH2 ]]; then
+		MISSED="true"
+		MISSED_TIME=${MISSED_TIME}
+		FINISH_TIME=${FINISH_TIME}
+	elif [[ $EPOCH1 -lt $EPOCH2 ]]; then
+		MISSED="false"
+		REMAIN_TIME=${REMAIN_TIME}
+	else
+		echo "Both date-times are the same."
+	fi
+}
+
+function check {
+
+	if [[ ! -d ${TODO_DIRECTORY} ]]; then
+		echo "Your ${TODO_DIRECTORY} directory does not exist"
+		echo "Exiting..."
+		exit
+		if [[ ! -d ${TODO_GIT_DIRECTORY} ]]; then
+			echo "Your ${TODO_DIRECTORY} is not a git directory"
+			echo "Exiting..."
+			exit
+		else
+			echo "Git exists in todo directory"
+		fi
+	else
+		echo "Todo directory exist"
+	fi
+}
+
+function list {
+
+	local OPTION=${1}
+	local ARGUMENT=${2}
+	# today [ default ]
+
+	if [[ -z ${OPTION} ]]; then
+		JOBS=$(ls ${CURRENT_DATE_DIRECTORY})
+		echo "Today [${CURRENT_DATE}]"
+		INDEX=1
+		for TIME in ${JOBS}; do
+			CONTENT=$(cat ${CURRENT_DATE_DIRECTORY}/${TIME})
+
+			echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}:"
+			echo -e "${GREEN}${CONTENT}${NC}"
+
+			INDEX=$((${INDEX} + 1))
+		done
+
+	# day [ specific date ]
+	elif [[ ${OPTION} == "day" ]]; then
+		day ${ARGUMENT}
+		SPECIFIC_DATE=${DATE}
+		SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${SPECIFIC_DATE}"
+
+		# check specific date directory
+		if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+			echo "Date [${SPECIFIC_DATE}] does not contain anything"
+		else
+			JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+			echo "Date [${SPECIFIC_DATE}]"
+			INDEX=1
+			for TIME in ${JOBS}; do
+				CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+
+				echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}:"
+				echo -e "${GREEN}${CONTENT}${NC}"
+
+				INDEX=$((${INDEX} + 1))
+			done
+		fi
+	elif [[ ${OPTION} == "month" ]]; then
+		if [[ -z ${ARGUMENT} ]]; then
+			SPECIFIC_MONTH_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}"
+			DAYS=$(ls ${SPECIFIC_MONTH_DIRECTORY})
+			for DAY in ${DAYS}; do
+				SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+					echo "Date [${SPECIFIC_DATE}] does not contain anything"
+				else
+					JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+					echo "Date [${SPECIFIC_DATE}]"
+					INDEX=1
+					for TIME in ${JOBS}; do
+						CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+
+						echo -e "${INDEX} - ${YELLOW}[${TIME}]${NC}:"
+						echo -e "${GREEN}${CONTENT}${NC}"
+
+						INDEX=$((${INDEX} + 1))
+					done
+				fi
+			done
+		fi
+	fi
+	# range [ date to date ]
+}
+
+function miss {
+
+	local OPTION=${1}
+	local ARGUMENT=${2}
+	# today [ default ]
+
+	if [[ -z ${OPTION} ]]; then
+		JOBS=$(ls ${CURRENT_DATE_DIRECTORY})
+		echo "Today [${CURRENT_DATE}]"
+		INDEX=1
+		for TIME in ${JOBS}; do
+			CONTENT=$(cat ${CURRENT_DATE_DIRECTORY}/${TIME})
+			FINISH=$(yq '.complete' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			DEADLINE=$(yq '.deadline' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			if [[ ${FINISH} == "true" ]]; then
+				INDEX=$((${INDEX} + 1))
+				continue
+			else
+				datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+				if [[ ${MISSED} == "false" ]]; then
+					continue
+					INDEX=$((${INDEX} + 1))
+				else
+					echo -e "${INDEX} - ${CYAN}Missed[${MISSED_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+					echo -e "${GREEN}${CONTENT}${NC}"
+					INDEX=$((${INDEX} + 1))
+				fi
+
+			fi
+		done
+
+	# day [ specific date ]
+	elif [[ ${OPTION} == "day" ]]; then
+		day ${ARGUMENT}
+		SPECIFIC_DATE=${DATE}
+		SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${SPECIFIC_DATE}"
+
+		# check specific date directory
+		if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+			echo "Date [${SPECIFIC_DATE}] does not contain anything"
+		else
+			JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+			echo "Date [${SPECIFIC_DATE}]"
+			INDEX=1
+			for TIME in ${JOBS}; do
+				CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				if [[ ${FINISH} == "true" ]]; then
+					INDEX=$((${INDEX} + 1))
+					continue
+				else
+					datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+					if [[ ${MISSED} == "false" ]]; then
+						continue
+						INDEX=$((${INDEX} + 1))
+					else
+						echo -e "${INDEX} - ${CYAN}Missed[${MISSED_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+						echo -e "${GREEN}${CONTENT}${NC}"
+						INDEX=$((${INDEX} + 1))
+					fi
+
+				fi
+			done
+		fi
+	elif [[ ${OPTION} == "month" ]]; then
+		if [[ -z ${ARGUMENT} ]]; then
+			SPECIFIC_MONTH_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}"
+			DAYS=$(ls ${SPECIFIC_MONTH_DIRECTORY})
+
+			for DAY in ${DAYS}; do
+				SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+					echo "Date [${SPECIFIC_DATE}] does not contain anything"
+				else
+					JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+					echo "Date [${SPECIFIC_DATE}]"
+					INDEX=1
+					for TIME in ${JOBS}; do
+						CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						if [[ ${FINISH} == "true" ]]; then
+							INDEX=$((${INDEX} + 1))
+							continue
+						else
+							datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+							if [[ ${MISSED} == "false" ]]; then
+								continue
+								INDEX=$((${INDEX} + 1))
+							else
+								echo -e "${INDEX} - ${CYAN}Missed[${MISSED_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+								echo -e "${GREEN}${CONTENT}${NC}"
+								INDEX=$((${INDEX} + 1))
+							fi
+
+						fi
+					done
+				fi
+			done
+		fi
+	fi
+	# range [ date to date ]
+
+}
+
+function remain {
+
+	local OPTION=${1}
+	local ARGUMENT=${2}
+	# today [ default ]
+
+	if [[ -z ${OPTION} ]]; then
+		JOBS=$(ls ${CURRENT_DATE_DIRECTORY})
+		echo "Today [${CURRENT_DATE}]"
+		INDEX=1
+		for TIME in ${JOBS}; do
+			CONTENT=$(cat ${CURRENT_DATE_DIRECTORY}/${TIME})
+			FINISH=$(yq '.complete' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			DEADLINE=$(yq '.deadline' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			if [[ ${FINISH} == "true" ]]; then
+				INDEX=$((${INDEX} + 1))
+				continue
+			else
+				datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+				if [[ ${MISSED} == "true" ]]; then
+					continue
+					INDEX=$((${INDEX} + 1))
+				else
+					echo -e "${INDEX} - ${CYAN}Remain[${REMAIN_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+					echo -e "${GREEN}${CONTENT}${NC}"
+					INDEX=$((${INDEX} + 1))
+				fi
+
+			fi
+		done
+
+	# day [ specific date ]
+	elif [[ ${OPTION} == "day" ]]; then
+		day ${ARGUMENT}
+		SPECIFIC_DATE=${DATE}
+		SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${SPECIFIC_DATE}"
+
+		# check specific date directory
+		if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+			echo "Date [${SPECIFIC_DATE}] does not contain anything"
+		else
+			JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+			echo "Date [${SPECIFIC_DATE_DIRECTORY}]"
+			INDEX=1
+			for TIME in ${JOBS}; do
+				CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				if [[ ${FINISH} == "true" ]]; then
+					INDEX=$((${INDEX} + 1))
+					continue
+				else
+					datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+					if [[ ${MISSED} == "true" ]]; then
+						continue
+						INDEX=$((${INDEX} + 1))
+					else
+						echo -e "${INDEX} - ${CYAN}Remain[${REMAIN_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+						echo -e "${GREEN}${CONTENT}${NC}"
+						INDEX=$((${INDEX} + 1))
+					fi
+
+				fi
+			done
+		fi
+	elif [[ ${OPTION} == "month" ]]; then
+		if [[ -z ${ARGUMENT} ]]; then
+			SPECIFIC_MONTH_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}"
+			DAYS=$(ls ${SPECIFIC_MONTH_DIRECTORY})
+			for DAY in ${DAYS}; do
+				SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+					echo "Date [${SPECIFIC_DATE}] does not contain anything"
+				else
+					JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+					echo "Date [${SPECIFIC_DATE_DIRECTORY}]"
+					INDEX=1
+					for TIME in ${JOBS}; do
+						CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						if [[ ${FINISH} == "true" ]]; then
+							INDEX=$((${INDEX} + 1))
+							continue
+						else
+							datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+							if [[ ${MISSED} == "true" ]]; then
+								continue
+								INDEX=$((${INDEX} + 1))
+							else
+								echo -e "${INDEX} - ${CYAN}Remain[${REMAIN_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+								echo -e "${GREEN}${CONTENT}${NC}"
+								INDEX=$((${INDEX} + 1))
+							fi
+
+						fi
+					done
+				fi
+			done
+		fi
+	fi
+	# range [ date to date ]
+
+}
+
+function finish {
+
+	local OPTION=${1}
+	local ARGUMENT=${2}
+	# today [ default ]
+
+	if [[ -z ${OPTION} ]]; then
+		JOBS=$(ls ${CURRENT_DATE_DIRECTORY})
+		echo "Today [${CURRENT_DATE}]"
+		INDEX=1
+		for TIME in ${JOBS}; do
+			CONTENT=$(cat ${CURRENT_DATE_DIRECTORY}/${TIME})
+			FINISH=$(yq '.complete' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			DEADLINE=$(yq '.deadline' ${CURRENT_DATE_DIRECTORY}/${TIME})
+			if [[ ${FINISH} == "false" ]]; then
+				INDEX=$((${INDEX} + 1))
+				continue
+			else
+				datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+				echo -e "${INDEX} - ${CYAN}Finish[${FINISH_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+				echo -e "${GREEN}${CONTENT}${NC}"
+				INDEX=$((${INDEX} + 1))
+			fi
+		done
+
+	# day [ specific date ]
+	elif [[ ${OPTION} == "day" ]]; then
+		day ${ARGUMENT}
+		SPECIFIC_DATE=${DATE}
+		SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${SPECIFIC_DATE}"
+
+		# check specific date directory
+		if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+			echo "Date [${SPECIFIC_DATE}] does not contain anything"
+		else
+			JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+			echo "Date [${SPECIFIC_DATE_DIRECTORY}]"
+			INDEX=1
+			for TIME in ${JOBS}; do
+				CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+				if [[ ${FINISH} == "false" ]]; then
+					INDEX=$((${INDEX} + 1))
+					continue
+				else
+					datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+					echo -e "${INDEX} - ${CYAN}Finish[${FINISH_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+					echo -e "${GREEN}${CONTENT}${NC}"
+					INDEX=$((${INDEX} + 1))
+				fi
+			done
+		fi
+	elif [[ ${OPTION} == "month" ]]; then
+		if [[ -z ${ARGUMENT} ]]; then
+			SPECIFIC_MONTH_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}"
+			DAYS=$(ls ${SPECIFIC_MONTH_DIRECTORY})
+			for DAY in ${DAYS}; do
+				SPECIFIC_DATE_DIRECTORY="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${DAY}"
+				if [[ ! -d ${SPECIFIC_DATE_DIRECTORY} ]]; then
+					echo "Date [${SPECIFIC_DATE}] does not contain anything"
+				else
+					JOBS=$(ls ${SPECIFIC_DATE_DIRECTORY})
+					echo "Date [${SPECIFIC_DATE_DIRECTORY}]"
+					INDEX=1
+					for TIME in ${JOBS}; do
+						CONTENT=$(cat ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						FINISH=$(yq '.complete' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						DEADLINE=$(yq '.deadline' ${SPECIFIC_DATE_DIRECTORY}/${TIME})
+						if [[ ${FINISH} == "false" ]]; then
+							INDEX=$((${INDEX} + 1))
+							continue
+						else
+							datetime_compare ${CURRENT_DATETIME} ${DEADLINE}
+							echo -e "${INDEX} - ${CYAN}Finish[${FINISH_TIME}]${NC} - @ ${YELLOW}[${TIME}]${NC}:"
+							echo -e "${GREEN}${CONTENT}${NC}"
+							INDEX=$((${INDEX} + 1))
+						fi
+					done
+				fi
+			done
+		fi
+	fi
+	# range [ date to date ]
+
+}
+
+function add {
+
+	### define yaml
+	YAML=$(
+		cat <<EOT
+---
+group: 
+name: 
+description: 
+task:
+  - 
+work:
+  - init
+deadline: 
+complete: false
+EOT
+	)
+
+	### validate yaml
+	mkdir -p ${CURRENT_DATE_DIRECTORY}
+	echo "${YAML}" >>"${CURRENT_TIME_FILE}"
+	vim "${CURRENT_TIME_FILE}"
+
+	### validate yaml
+	YAML_LINT_OPTION="{extends: default, rules: {empty-values: {level: error}}}"
+	VALIDATE=$(yamllint -d "${YAML_LINT_OPTION}" ${CURRENT_TIME_FILE})
+
+	if [[ -z ${VALIDATE} ]]; then
+		echo "Valid YAML"
+		echo "Continue"
+	else
+		echo ${VALIDATE}
+		rm -rf "${CURRENT_TIME_FILE}"
+		echo "Exiting..."
+		exec bash
+	fi
+
+	### git operation
+	git -C ${TODO_DIRECTORY} add ${CURRENT_TIME_FILE}
+	git -C ${TODO_DIRECTORY} commit -m "Add new job @ ${CURRENT_DATETIME}"
+}
+
+function update {
+	### basic input
+	local TIME=${1}
+
+	### basic information
+	SPECIFIC_TIME_FILE="${TODO_DIRECTORY}/${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DAY}/${TIME}.yaml"
+	vim ${SPECIFIC_TIME_FILE}
+
+	### validate yaml
+	YAML_LINT_OPTION="{extends: default, rules: {empty-values: {level: error}}}"
+	VALIDATE=$(yamllint -d "${YAML_LINT_OPTION}" ${SPECIFIC_TIME_FILE})
+
+	if [[ -z ${VALIDATE} ]]; then
+		echo "Valid YAML"
+		echo "Continue"
+	else
+		echo ${VALIDATE}
+		git -C ${TODO_DIRECTORY}
+		echo "Exiting..."
+		exec bash
+	fi
+
+	### git operation
+	git -C ${TODO_DIRECTORY} add ${SPECIFIC_TIME_FILE}
+	git -C ${TODO_DIRECTORY} commit -m "Update job [${TIME}] @ ${CURRENT_DATETIME}}"
+}
+
+function push {
+	git -C ${TODO_DIRECTORY} push
+}
+
+function pull {
+	git -C ${TODO_DIRECTORY} pull --rebase
+}
+
+case ${COMMAND} in
+"add")
+	echo "### [ADD NEW JOB] ###"
+	check
+	add
+	;;
+"list")
+	echo "### [LIST JOBS] ###"
+	check
+	list ${OPTION} ${ARGUMENT}
+	;;
+"miss")
+	echo "### [MISSED JOBS] ###"
+	check
+	miss ${OPTION} ${ARGUMENT}
+	;;
+"remain")
+	echo "### [REMAIN JOBS] ###"
+	check
+	remain ${OPTION} ${ARGUMENT}
+	;;
+"finish")
+	echo "### [FINISHED JOBS] ###"
+	check
+	finish ${OPTION} ${ARGUMENT}
+	;;
+"update")
+	echo "### [UPDATE JOBS] ###"
+	check
+	update ${TIME}
+	;;
+"push")
+	echo "### [PUSH JOBS] ###"
+	check
+	push
+	;;
+"pull")
+	echo "### [PULL JOBS] ###"
+	check
+	pull
+	;;
+*)
+	echo "Options guideline"
+	echo "add: to add new job"
+	echo "list: to list today jobs"
+	echo "update: to update job"
+	echo "push: to push jobs"
+	echo "pull[rebase]: to pull jobs"
+	;;
+esac
