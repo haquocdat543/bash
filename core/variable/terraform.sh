@@ -1,0 +1,1 @@
+export lkf="-lock=false"
