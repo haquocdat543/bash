@@ -20,5 +20,5 @@ alias rcfbd='./configure --prefix=/usr/local/bin --disable-multilib'
 alias cmk='cmake'
 alias cmk..='cmake ../'
 alias cmkd='cmake -D'
-alias mkgcc='. $HOME/preconfig/Suitcase/bash/scripts/makeGcc.sh'
+alias mkgcc='. $HOME/bash/core/script/makeGcc.sh'
 

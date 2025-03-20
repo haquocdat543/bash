@@ -1,6 +1,6 @@
 ### Terraform command
-alias tfcs='. $HOME/preconfig/Suitcase/bash/scripts/cleanState.sh'
-alias tfc='. $HOME/preconfig/Suitcase/bash/scripts/clean.sh'
+alias tfcs='. $HOME/bash/core/script/cleanState.sh'
+alias tfc='. $HOME/bash/core/script/clean.sh'
 alias tfi='terraform init'
 alias tfiu='terraform init -upgrade'
 alias tfpr='terraform providers'

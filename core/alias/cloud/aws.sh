@@ -13,8 +13,8 @@ alias a2iamlp='aws iam list-policies'
 alias a2iamls='aws iam list-users'
 alias a2iamlg='aws iam list-groups'
 alias a2iamlk='aws iam list-ssh-public-keys'
-alias a2iamulk='. $HOME/preconfig/Suitcase/bash/scripts/iamUploadKey.sh'
-alias a2iamdk='. $HOME/preconfig/Suitcase/bash/scripts/iamDeleteKey.sh'
+alias a2iamulk='. $HOME/bash/core/script/iamUploadKey.sh'
+alias a2iamdk='. $HOME/bash/core/script/iamDeleteKey.sh'
 alias a2iamlak='aws iam list-access-keys'
 
 ### AWS Compute
@@ -30,7 +30,7 @@ alias a2ec2dri='aws ec2 deregister-image --image-id'
 alias a2ec2dsi='aws ec2 disable-image --image-id'
 alias a2deseps='aws ec2 describe-vpc-endpoint-services'
 alias a2desep='aws ec2 describe-vpc-endpoints'
-alias a2ec2getpk='. $HOME/preconfig/Suitcase/bash/scripts/getEC2Publickey.sh' # <key-pair-name here>
+alias a2ec2getpk='. $HOME/bash/core/script/getEC2Publickey.sh' # <key-pair-name here>
 
 ### AWS BLock Storage
 alias a2ebsdesv='aws ebs describe-volumes'
@@ -60,7 +60,7 @@ alias a2s3cb='aws s3api create-bucket --bucket'
 alias a2s3db='aws s3api delete-bucket --bucket'
 
 ### AWS SQL DB
-alias a2rdsci='. $HOME/preconfig/Suitcase/bash/scripts/rds.sh'
+alias a2rdsci='. $HOME/bash/core/script/rds.sh'
 alias a2rdsdi='aws rds delete-db-instance --db-instance-identifier'
 alias a2rdsli='aws rds describe-db-instances'
 alias a2rdslii='aws rds describe-db-instances | grep DBInstanceIdentifier'
@@ -70,14 +70,14 @@ alias a2ddblt='aws dynamodb list-tables'
 alias a2ddbdt='aws dynamodb delete-table --table-name'
 
 ### AWS MemDB
-alias a2eccc='. $HOME/preconfig/Suitcase/bash/scripts/elasticache.sh'
+alias a2eccc='. $HOME/bash/core/script/elasticache.sh'
 alias a2ecli='aws elasticache describe-cache-clusters'
 alias a2ecdc='aws elasticache delete-cache-cluster --cache-cluster-id'
 
 ### AWS IAC
-alias a2clmd='. $HOME/preconfig/Suitcase/bash/scripts/clmDeploy.sh'
-alias a2clmu='. $HOME/preconfig/Suitcase/bash/scripts/clmUpdate.sh'
-alias a2clmdcap='. $HOME/preconfig/Suitcase/bash/scripts/clmDeployCapability.sh'
+alias a2clmd='. $HOME/bash/core/script/clmDeploy.sh'
+alias a2clmu='. $HOME/bash/core/script/clmUpdate.sh'
+alias a2clmdcap='. $HOME/bash/core/script/clmDeployCapability.sh'
 alias a2clmdcapeks='aws cloudformation deploy --stack-name EKS --template-file $HOME/preconfig/Suitcase/bash/infra/aws/k8s.yaml --capabilities CAPABILITY_IAM'
 alias a2clmdcapec2='aws cloudformation deploy --stack-name EC2 --template-file $HOME/preconfig/Suitcase/bash/infra/aws/ec2.yaml --capabilities CAPABILITY_IAM'
 alias a2clmds='aws cloudformation delete-stack --stack-name'
@@ -88,7 +88,7 @@ alias a2clmli='aws cloudformation describe-stacks'
 alias a2clmo='aws cloudformation describe-stacks --query Stacks[].Outputs[*].[OutputKey,OutputValue] --output text'
 
 ### AWS Serverless
-alias a2lmdi='. $HOME/preconfig/Suitcase/bash/scripts/lambdaInvoke.sh'
+alias a2lmdi='. $HOME/bash/core/script/lambdaInvoke.sh'
 alias a2lmdlf='aws lambda list-functions'
 alias a2lmddf='aws lambda delete-function --function-name'
 alias a2lmdgcf='aws lambda get-function-configuration --function-name'
@@ -126,7 +126,7 @@ alias a2qldesl='aws qldb describe-ledger --name'
 ### AWS Backup command
 alias a2bklbkp='aws backup list-backup-plans'
 alias a2bklbkps='aws backup list-backup-selections --backup-plan-id'
-alias a2bkdbkps='. $HOME/preconfig/Suitcase/bash/scripts/deleteBackupSelection.sh'
+alias a2bkdbkps='. $HOME/bash/core/script/deleteBackupSelection.sh'
 alias a2bkgbkp='aws backup get-backup-plan'
 alias a2bkcbkp='aws backup create-backup-plan'
 alias a2bkdbkp='aws backup delete-backup-plan --backup-plan-id'
@@ -147,21 +147,21 @@ alias a2kmsdesk='aws kms describe-key --key-id' # aws kms describe-key --key-id 
 alias a2loggcr='aws logs create-log-group --log-group-name'
 alias a2logdeslg='aws logs describe-log-groups'
 alias a2logdesls='aws logs describe-log-streams'
-alias a2logdesle='. $HOME/preconfig/Suitcase/bash/scripts/getLogEvents.sh'
+alias a2logdesle='. $HOME/bash/core/script/getLogEvents.sh'
 
 ### Service quota command
 alias a2svcqtls='aws service-quotas list-requested-service-quota-change-history'
 
 ### Service quota command
-alias svcqt='. $HOME/preconfig/Suitcase/bash/scripts/quotaRequest.sh'
-alias a2rtt='. $HOME/preconfig/Suitcase/bash/scripts/awsKeyRotate.sh'
-alias a2rttall='. $HOME/preconfig/Suitcase/bash/scripts/rotateAllProfiles.sh'
+alias svcqt='. $HOME/bash/core/script/quotaRequest.sh'
+alias a2rtt='. $HOME/bash/core/script/awsKeyRotate.sh'
+alias a2rttall='. $HOME/bash/core/script/rotateAllProfiles.sh'
 
 ### S3 command
 alias s3cf='s3cmd --configure'
 alias s3l='s3cmd ls'
 alias s3p='s3cmd put'
 alias s3g='s3cmd get'
-alias s3dl='. $HOME/preconfig/Suitcase/bash/scripts/s3_bucket_download.sh'
-alias s3ul='. $HOME/preconfig/Suitcase/bash/scripts/s3_object_copy.sh'
-alias s3ro='. $HOME/preconfig/Suitcase/bash/scripts/s3_object_remove.sh'
+alias s3dl='. $HOME/bash/core/script/s3_bucket_download.sh'
+alias s3ul='. $HOME/bash/core/script/s3_object_copy.sh'
+alias s3ro='. $HOME/bash/core/script/s3_object_remove.sh'
