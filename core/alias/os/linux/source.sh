@@ -1,3 +1,2 @@
 ### Source
-
-alias sbrc='sh ${HOME}/bash/core/script/sourceRunCommand.sh'
+alias sbrc='source ${HOME}/.bashrc'
