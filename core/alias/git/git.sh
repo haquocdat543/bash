@@ -189,6 +189,10 @@ alias grl='git reflog'
 ### Git command [cherry-pick]
 alias gcp='git cherry-pick'
 
+### Git command [repack]
+alias grp='git repack'
+alias grpad='git repack -a -d'
+
 ### Git config
 alias gcn='git config --global user.name'
 alias gce='git config --global user.email'
