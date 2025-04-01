@@ -331,7 +331,6 @@ alias kapvis='. $HOME/bash/core/script/postgresVisor.sh apply'     # <operation>
 alias kdpvis='. $HOME/bash/core/script/postgresVisor.sh delete'    # <operation> (apply/delete)
 alias kavis='. $HOME/bash/core/script/visor.sh apply'              # <operation> (apply/delete)
 alias kdvis='. $HOME/bash/core/script/visor.sh delete'             # <operation> (apply/delete)
-alias gippvd='. $HOME/bash/core/script/getIpCloudProvider.sh'      # <operation> (apply/delete)
 alias hmptu='. $HOME/bash/core/script/helmPullTemplate.sh --untar' # <operation> Eg: --untar
 alias hmara='. $HOME/preconfig/Suitcase/bash/data/helm/helm.sh'                   # Add all helm repo in script
 alias dc64='. $HOME/bash/core/script/decodeBase64.sh'              # <base64-encoded-text>
