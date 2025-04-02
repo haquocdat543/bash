@@ -72,6 +72,8 @@ alias g6='git revert HEAD'
 ### Git command [log]
 alias gl='git log'
 alias glo='git log --oneline'
+alias glof='git log --oneline --follow --'
+alias glopf='git log --oneline -p --follow --'
 alias gloo='git log --oneline -n 20'
 alias glooo='git log --oneline -n 30'
 alias gloooo='git log --oneline -n 40'
