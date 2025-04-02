@@ -215,6 +215,9 @@ alias gcec='git config --global user.email "wwwdatha543@gmail.com"'
 alias gcnn='git config --global user.name "Ha Quoc Dat"'
 alias gcen='git config --global user.email "datquocha@notional.ventures"'
 
+### Git command [others]
+alias gmv='git mv'
+
 ### Git config [ hook ]
 alias gcfgch="git config --global core.hooksPath ~/.git-hooks"
 alias vigh='vim ${HOME}/.git-hooks/pre-push'
