@@ -1,2 +1,2 @@
-# source "${HOME}/.local/share/blesh/ble.sh"
+source "${HOME}/.local/share/blesh/ble.sh"
 set -o vi
