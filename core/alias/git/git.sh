@@ -198,6 +198,10 @@ alias gbl='git blame'
 
 ### Git command [reflog]
 alias grl='git reflog'
+alias grlo='git reflog --oneline -n 10'
+alias grloo='git reflog --oneline -n 20'
+alias grlooo='git reflog --oneline -n 30'
+alias grloooo='git reflog --oneline -n 40'
 
 ### Git command [cherry-pick]
 alias gcp='git cherry-pick'
