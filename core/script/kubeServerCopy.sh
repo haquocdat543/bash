@@ -6,7 +6,11 @@ LOCAL_PATH=${3}
 CONTAINER_NAME=${4}
 
 if [[ -z ${CONTAINER_NAME} ]]; then
+  set -x
   kubectl cp ${LOCAL_PATH} ${POD_NAME}:${CONTAINER_PATH}
+  set +x
 else
+  set -x
   kubectl cp ${LOCAL_PATH} ${POD_NAME}:${CONTAINER_PATH} -c ${CONTAINER_NAME}
+  set +x
 fi
