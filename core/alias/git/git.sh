@@ -31,7 +31,7 @@ alias gduc='git diff $(git branch --show-current) @{u}'
 ### Git command [add]
 alias ga='git add'
 alias ga.='git add .'
-alias gai='git add --ignore-removal .'
+alias gai='git add --interactive'
 alias gaa='git add -A'
 alias gap='git add --patch'
 alias gac='gaa ; gc'
