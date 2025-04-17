@@ -11,7 +11,7 @@ alias gclrm='git clone --recurse-submodules'
 alias gs='git status'
 alias gsp='git status --porcelain'
 
-### Git command [diff]
+### Git command [show]
 alias gsh='git show'
 alias gsh1='git show HEAD~1'
 alias gsh2='git show HEAD~2'
@@ -23,6 +23,19 @@ alias gsh7='git show HEAD~7'
 alias gsh8='git show HEAD~8'
 alias gsh9='git show HEAD~9'
 alias gsh10='git show HEAD~10'
+
+alias gshr1='git show HEAD@{1}'
+alias gshr2='git show HEAD@{2}'
+alias gshr3='git show HEAD@{3}'
+alias gshr4='git show HEAD@{4}'
+alias gshr5='git show HEAD@{5}'
+alias gshr6='git show HEAD@{6}'
+alias gshr7='git show HEAD@{7}'
+alias gshr8='git show HEAD@{8}'
+alias gshr9='git show HEAD@{9}'
+alias gshr10='git show HEAD@{10}'
+
+### Git command [diff]
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdcu='git diff @{u} $(git branch --show-current)'
