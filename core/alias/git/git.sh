@@ -75,16 +75,9 @@ alias grsh='git reset --hard'
 alias grss='git reset --soft'
 alias grsm='git reset --mixed'
 alias gnk='git reset --hard HEAD && git clean -fd' # git nuke
-alias g1='git reset --soft HEAD~1'
-alias g0='git reset --hard HEAD~1'
-alias g2='git reset --'
-alias g2a='git reset -- .'
 
 ### Git command [restore]
-alias g3='git restore --'
-alias g4='git restore --source=HEAD'
-alias g4a='git restore --source=HEAD .'
-alias g5='git restore --source='
+alias grst='git restore'
 
 ### Git command [revert]
 alias grv='git revert'
