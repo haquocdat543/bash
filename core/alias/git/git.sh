@@ -223,6 +223,11 @@ alias grvl='git rev-list'
 alias gco='git count-objects'
 alias gcov='git count-objects -v'
 
+### Git command [object] advance
+alias gfsckf='git fsck --full'
+alias gfscku='git fsck --unreachable'
+alias ggc='git gc'
+
 ### Git command [notes]
 alias gna='git notes add -m'
 alias gne='git notes edit'
