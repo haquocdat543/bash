@@ -199,6 +199,7 @@ alias gbl='git blame'
 
 ### Git command [reflog]
 alias grl='git reflog'
+alias grls='git reflog show'
 alias grlo='git reflog --oneline -n 10'
 alias grloo='git reflog --oneline -n 20'
 alias grlooo='git reflog --oneline -n 30'
