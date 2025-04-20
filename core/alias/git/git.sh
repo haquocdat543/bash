@@ -117,6 +117,7 @@ alias grbo='git rebase --onto'
 
 ### Git command [branch]
 alias gb='git branch'
+alias gbc='git branch --contains'
 alias gbvv='git branch -vv'
 alias gba='git branch -a'
 alias gbm='git branch -M'
