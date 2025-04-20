@@ -227,6 +227,7 @@ alias gcov='git count-objects -v'
 ### Git command [object] advance
 alias gfsckf='git fsck --full'
 alias gfscku='git fsck --unreachable'
+alias gfsckl='git fsck --lost-found'
 alias ggc='git gc'
 
 ### Git command [notes]
