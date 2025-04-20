@@ -137,7 +137,6 @@ alias gra='git remote add'
 ### Git command [fetch, pull]
 alias gpl='git pull'
 alias gplom='git pull origin main'
-alias grp='git request-pull'
 alias gf='git fetch'
 alias gfat='git fetch --all --tags'
 
@@ -178,13 +177,6 @@ alias gwd='git worktree delete'
 alias gsma='git submodule add'
 alias gsmu='git submodule update'
 
-### Git command [rev-list]
-alias gct='git rev-list --count'
-alias gca='git rev-list --count --all'
-alias gch='git rev-list HEAD --count'
-alias gco='git count-objects'
-alias gcov='git count-objects -v'
-
 ### Git command [tree]
 alias glt='git ls-tree'
 alias gltr='git ls-tree -r'
@@ -217,6 +209,19 @@ alias gcp='git cherry-pick'
 ### Git command [repack]
 alias grp='git repack'
 alias grpad='git repack -a -d'
+
+### Git command [objects]
+alias ghow='git hash-object -w'
+alias guia='git update-index --add'
+alias gwt='git write-tree'
+alias gct='git commit-tree' # git commit-tree <tree_hash> -p <parent_commit_hash> -m "Your commit message"
+alias gur='git update-ref' # git update-ref refs/heads/develop 012345ab
+alias gsr='git show-ref'
+alias gsbr='git symbolic-ref'
+alias grvp='git rev-parse'
+alias grvl='git rev-list'
+alias gco='git count-objects'
+alias gcov='git count-objects -v'
 
 ### Git config
 alias gcn='git config --global user.name'
