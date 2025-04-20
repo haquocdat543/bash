@@ -223,6 +223,11 @@ alias grvl='git rev-list'
 alias gco='git count-objects'
 alias gcov='git count-objects -v'
 
+### Git command [notes]
+alias gna='git notes add -m'
+alias gne='git notes edit'
+alias gnr='git notes remote'
+
 ### Git config
 alias gcn='git config --global user.name'
 alias gce='git config --global user.email'
