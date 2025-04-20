@@ -187,8 +187,10 @@ alias gcov='git count-objects -v'
 
 ### Git command [tree]
 alias glt='git ls-tree'
+alias gltr='git ls-tree -r'
 alias glth='git ls-tree HEAD'
 alias gcfp='git cat-file -p'
+alias gcft='git cat-file -t'
 
 ### Git command [version]
 alias gv='git version'
