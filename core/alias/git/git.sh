@@ -222,6 +222,7 @@ alias gsr='git show-ref'
 alias gsbr='git symbolic-ref'
 alias grvp='git rev-parse'
 alias grvl='git rev-list'
+alias gnrv='git name-rev'
 alias gco='git count-objects'
 alias gcov='git count-objects -v'
 
