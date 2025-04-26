@@ -226,6 +226,9 @@ alias gnrv='git name-rev'
 alias gco='git count-objects'
 alias gcov='git count-objects -v'
 
+# Git command [objects]
+alias glthead='git ls-tree -r $(git show -s --format=%T HEAD)'
+
 ### Git command [object] advance
 alias gfsckf='git fsck --full'
 alias gfscku='git fsck --unreachable'
