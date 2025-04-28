@@ -87,20 +87,20 @@ alias g6='git revert HEAD'
 
 ### Git command [log]
 alias gl='git log'
-alias glo='git log --oneline'
-alias glof='git log --oneline --follow --'
-alias glopf='git log --oneline -p --follow --'
-alias gloo='git log --oneline -n 20'
-alias glooo='git log --oneline -n 30'
-alias gloooo='git log --oneline -n 40'
-alias glo10='git log -n 10 --oneline'
-alias gl10='git log -n 10'
-alias gluc='git log --oneline @{u} --not $(git branch --show-current)'
-alias glcu='git log --oneline $(git branch --show-current) --not @{u}'
+alias glo='git log --oneline --graph'
+alias glof='git log --oneline --graph --follow --'
+alias glopf='git log --oneline --graph -p --follow --'
+alias gloo='git log --oneline --graph -n 20'
+alias glooo='git log --oneline --graph -n 30'
+alias gloooo='git log --oneline --graph -n 40'
+alias glo10='git log -n 10 --oneline --graph'
+alias gl10='git log -n 10 --graph'
+alias gluc='git log --oneline --graph @{u} --not $(git branch --show-current)'
+alias glcu='git log --oneline --graph $(git branch --show-current) --not @{u}'
 alias glog='git log --oneline --graph'
-alias gdt='git log --diff-filter=A --follow --format=%aD -1 --' # Find date/time a file/folder was first added to a Git repository
-alias gle='git log -1 --pretty="format:%aD"'                    # Find date/time a file/folder was last edit to a Git repository
-alias glau="git log --format='%aN' | sort | uniq"
+alias gdt='git log --graph --diff-filter=A --follow --format=%aD -1 --' # Find date/time a file/folder was first added to a Git repository
+alias gle='git log --graph -1 --pretty="format:%aD"'                    # Find date/time a file/folder was last edit to a Git repository
+alias glau="git log --graph --format='%aN' | sort | uniq"
 
 ### Git command [merge]
 alias gmfo='git merge --ff-only'
