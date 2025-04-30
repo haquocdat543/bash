@@ -41,6 +41,7 @@ alias gds='git diff --staged'
 alias gdcu='git diff @{u} $(git branch --show-current)'
 alias gduc='git diff $(git branch --show-current) @{u}'
 alias gdf='git diff-files'
+alias gdfp='git diff-files -p'
 alias gdi='git diff-index'
 alias gdt='git diff-tree'
 
@@ -184,6 +185,7 @@ alias gsmu='git submodule update'
 
 ### Git command [tree]
 alias glt='git ls-files'
+alias glts='git ls-files -s'
 alias glt='git ls-tree'
 alias gltr='git ls-tree -r'
 alias glth='git ls-tree HEAD'
