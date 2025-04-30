@@ -1,3 +1,4 @@
+
 ### Git command [init]
 alias gi='git init'
 
@@ -74,6 +75,7 @@ alias gc='git commit -m'
 alias gcs='git commit -S -m'
 alias gC='git commit -a'
 alias gcu='git commit -m "Update"'
+alias gita='git update-ref $(git symbolic-ref HEAD) $(git commit-tree $(git write-tree) -p $(git rev-parse HEAD) -m "feat(file): git ls files")'
 
 ### Git command [reset]
 alias grsh='git reset --hard'
