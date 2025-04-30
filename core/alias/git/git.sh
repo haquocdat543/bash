@@ -189,7 +189,7 @@ alias gcft='git cat-file -t'
 alias gv='git version'
 
 ### Git command [clean]
-alias gclddf='git clean -df'
+alias gcldf='git clean -df'
 
 ### Git command [rm]
 alias grm='git rm'
