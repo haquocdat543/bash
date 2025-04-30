@@ -134,6 +134,7 @@ alias gckd='git checkout dev'
 alias grm='git remote'
 alias grmv='git remote -v'
 alias gra='git remote add'
+alias glrm='git ls-remote'
 
 ### Git command [fetch, pull]
 alias gpl='git pull'
@@ -179,6 +180,7 @@ alias gsma='git submodule add'
 alias gsmu='git submodule update'
 
 ### Git command [tree]
+alias glt='git ls-files'
 alias glt='git ls-tree'
 alias gltr='git ls-tree -r'
 alias glth='git ls-tree HEAD'
