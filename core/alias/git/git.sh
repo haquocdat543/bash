@@ -40,6 +40,9 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gdcu='git diff @{u} $(git branch --show-current)'
 alias gduc='git diff $(git branch --show-current) @{u}'
+alias gdf='git diff-files'
+alias gdi='git diff-index'
+alias gdt='git diff-tree'
 
 ### Git command [add]
 alias ga='git add'
