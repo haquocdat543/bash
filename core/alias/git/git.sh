@@ -78,9 +78,10 @@ alias gcu='git commit -m "Update"'
 alias gita='git update-ref $(git symbolic-ref HEAD) $(git commit-tree $(git write-tree) -p $(git rev-parse HEAD) -m "feat(file): git ls files")'
 
 ### Git command [reset]
+alias grs='git reset'
+alias grsm='git reset --mixed'
 alias grsh='git reset --hard'
 alias grss='git reset --soft'
-alias grsm='git reset --mixed'
 alias gnk='git reset --hard HEAD && git clean -fd' # git nuke
 
 ### Git command [restore]
