@@ -29,8 +29,8 @@ alias dncn='docker network connect'
 alias dncnip='docker network connect --ip'
 alias dndcn='docker network disconnect'
 
-alias dpsn='docker ps -a -q'
-alias dps='docker ps -a'
+alias dkpsn='docker ps -a -q'
+alias dkps='docker ps -a'
 
 alias dcm='docker commit'
 
