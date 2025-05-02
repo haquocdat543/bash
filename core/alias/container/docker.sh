@@ -1,6 +1,8 @@
 # docker
 alias dk='docker'
 alias dki='docker init'
+
+# [Compose]
 alias dcp='docker-compose'
 alias dcpud='docker-compose up -d'
 alias dcpudb='docker-compose up -d --build'
@@ -13,8 +15,11 @@ alias dcpt='docker-compose top'
 alias dcprs='docker-compose restart'
 alias dcpe='docker-compose exec'
 alias dcppl='docker-compose pull'
-alias dl='docker logs'
-alias dlg='docker login'
+
+alias dkl='docker logs'
+alias dklg='docker login'
+
+# [Network]
 alias dnl='docker network ls'
 alias dni='docker network inspect'
 alias dnr='docker network rm'
@@ -23,9 +28,13 @@ alias dncd='docker network create --driver'
 alias dncn='docker network connect'
 alias dncnip='docker network connect --ip'
 alias dndcn='docker network disconnect'
+
 alias dpsn='docker ps -a -q'
 alias dps='docker ps -a'
+
 alias dcm='docker commit'
+
+# [Config]
 alias dkcf='docker config'
 alias dkcfc='docker config create'
 alias dkcfud='docker config update'
@@ -36,14 +45,19 @@ alias dkctu='docker context use'
 alias dkctr='docker context rm'
 alias dkcfk='locker config ls'
 alias dkcfr='locker config rm'
+
+# [Volume]
 alias dkcp='docker cp'
 alias dload='docker load -i'
 alias dsave='docker save --output'
 alias dtop='docker top'
+
+# [Volume]
 alias dvl='docker volume ls'
 alias dvi='docker volume inspect'
 alias dvc='docker volume create'
 alias dvr='docker volume rm'
+
 alias dkip="docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias dr='docker run'
 alias drit='docker run -it'
@@ -74,16 +88,23 @@ alias dkeit='docker exec -it'
 alias drm='docker rm -f'
 alias drma='docker rm -f $(docker ps -aq)'
 alias dmpsa='docker prune system -a'
+
+# [Image]
 alias dms='docker images'
 alias dmsd='docker images --digests'
 alias dmsh='docker images history'
 alias dmr='docker image rm'
 alias dmra='docker image rm $(docker images -aq)'
 alias dmp='docker image prune'
+
+# [Pull]
 alias dpl='docker pull'
 alias dpla='docker pull -a'
 alias dpldtr='docker pull datree/datree'
+
 alias dks='docker search'
+
+# [Node]
 alias dnps='docker node ps'
 alias dnls='docker node ls'
 alias dnlsl="docker node ls -q | xargs docker node inspect -f '{{ .ID }} [{{ .Description.Hostname }}]: {{ .Spec.Labels }}'"
@@ -95,6 +116,8 @@ alias dnurw='docker node update --role worker'
 alias dnrm='docker node rm'
 alias dnpm='docker node promote'
 alias dndm='docker node demote'
+
+# [Service & Stack]
 alias dsps='docker service ps'
 alias dsl='docker service ls'
 alias dstl='docker stack ls'
@@ -112,10 +135,12 @@ alias dbpa='docker builder prune -a'
 alias dbxb='docker buildx bake'
 alias dbplf='. $HOME/bash/core/script/dockerBuildPlatform.sh'
 alias dt='docker tag'
-alias dlg='docker login'
-alias dp='docker push'
+
+alias dkp='docker push'
+
+# [Machine]
 alias dmc='docker-machine'
-alias dmcc='docker-machine create' #driver=?(virtualbox, vmware, hyperv) virtualMachineName
+alias dmcc='docker-machine create' #driver=[virtualbox, vmware, hyperv] virtualMachineName
 alias dmcl='docker-machine ls'
 alias dmcst='docker-machine status'
 alias dmcstt='docker-machine start'
@@ -125,6 +150,8 @@ alias dmcrm='docker-machine rm'
 alias dmcip='docker-machine ip'
 alias dmcscp='docker-machine scp -r'
 alias dmcssh='docker-machine ssh'
+
+# [Swarm]
 alias dswi='docker swarm init --advertise-addr='
 alias djm='docker swarm join-token manager'
 alias djw='docker swarm join-token worker'
