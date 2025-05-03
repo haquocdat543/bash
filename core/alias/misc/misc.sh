@@ -215,9 +215,6 @@ alias o1='cd ; git clone https://github.com/gpakosz/.tmux.git ; ln -s -f .tmux/.
 alias idk='yd ; sd ; ed'
 alias rmssd='. $HOME/bash/core/script/removeSystemd.sh'
 
-### Terminal GPT
-alias cgpt='. $HOME/bash/core/script/gpt.sh'
-
 ### Python application
 alias popt='py3 $HOME/test/draft/python/operation.py'
 
