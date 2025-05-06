@@ -10,10 +10,13 @@ alias gclrm='git clone --recurse-submodules'
 
 ### Git command [status]
 alias gs='git status'
+alias gss='git status -s'
+alias gssb='git status -sb'
 alias gsp='git status --porcelain'
 
 ### Git command [show]
 alias gsh='git show'
+alias gshw='git show --word-diff=color'
 alias gsh1='git show HEAD~1'
 alias gsh2='git show HEAD~2'
 alias gsh3='git show HEAD~3'
@@ -24,6 +27,16 @@ alias gsh7='git show HEAD~7'
 alias gsh8='git show HEAD~8'
 alias gsh9='git show HEAD~9'
 alias gsh10='git show HEAD~10'
+alias gshw1='git show HEAD~1 --word-diff=color'
+alias gshw2='git show HEAD~2 --word-diff=color'
+alias gshw3='git show HEAD~3 --word-diff=color'
+alias gshw4='git show HEAD~4 --word-diff=color'
+alias gshw5='git show HEAD~5 --word-diff=color'
+alias gshw6='git show HEAD~6 --word-diff=color'
+alias gshw7='git show HEAD~7 --word-diff=color'
+alias gshw8='git show HEAD~8 --word-diff=color'
+alias gshw9='git show HEAD~9 --word-diff=color'
+alias gsh1w0='git show HEAD~10 --word-diff=color'
 
 alias gshr1='git show HEAD@{1}'
 alias gshr2='git show HEAD@{2}'
@@ -38,7 +51,9 @@ alias gshr10='git show HEAD@{10}'
 
 ### Git command [diff]
 alias gd='git diff'
+alias gdw='git diff --word-diff=color'
 alias gds='git diff --staged'
+alias gdsw='git diff --staged --word-diff=color'
 alias gdcu='git diff @{u} $(git branch --show-current)'
 alias gduc='git diff $(git branch --show-current) @{u}'
 alias gdf='git diff-files'
@@ -57,12 +72,12 @@ alias gac='gaa ; gc'
 alias gau='git add -u'
 
 ### Git command [stash]
-alias gsl='git stash list'
-alias gss='git stash save'
-alias gsa='git stash apply'
-alias gsd='git stash drop'
-alias gssh='git stash show'
-alias gsshp='git stash show -p'
+alias gstl='git stash list'
+alias gsts='git stash save'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstsh='git stash show'
+alias gstshp='git stash show -p'
 
 ### Git command [commit]
 alias gtg='git commit --allow-empty -m "chore: trigger"'   # Trigger
