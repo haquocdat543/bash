@@ -9,6 +9,9 @@ alias rfya='rm -rf node-modules package-lock.json'
 alias yarnall='yacc && rfya && yarn && yas'
 
 # [PACKAGES}
+alias yaalit='yarn add lit'
+
+# [GLOBAL PACKAGES}
 alias yagavue='yarn global add @vue/cli'
 alias yagaang='yarn global add @angular/cli'
 alias yagmgsh='yarn global add mongosh'
