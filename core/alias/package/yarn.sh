@@ -8,11 +8,14 @@ alias yacc='yarn cache clean -f'
 alias rfya='rm -rf node-modules package-lock.json'
 alias yarnall='yacc && rfya && yarn && yas'
 
-# [PACKAGES}
+# [PACKAGES]
 alias yaalit='yarn add lit'
 
-# [GLOBAL PACKAGES}
+# [GLOBAL PACKAGES {Frontend}]
 alias yagavue='yarn global add @vue/cli'
 alias yagaang='yarn global add @angular/cli'
-alias yagmgsh='yarn global add mongosh'
+
+# [GLOBAL PACKAGES {Other}
+alias yagamgsh='yarn global add mongosh'
+alias yagad3='yarn global add d3'
 alias yadggsdk='yarn add @dagger.io/dagger --dev'
