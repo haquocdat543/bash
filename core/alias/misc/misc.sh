@@ -155,7 +155,6 @@ alias ible='. $HOME/bash/core/script/ble.sh'
 alias itgpt='curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin'
 alias igm='git clone https://github.com/informalsystems/gm ; cp -f $HOME/gm/bin/* /usr/local/bin'
 alias ikubessh='. $HOME/bash/core/script/kubeSsh.sh'
-alias ibat='cargo install --locked bat'
 alias inixasroot='. $HOME/bash/core/script/installNixAsRoot.sh'
 alias inix='sh <(curl -L https://nixos.org/nix/install)'
 alias izoxide='curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh' # eval "$(zoxide init bash)"
