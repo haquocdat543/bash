@@ -1,10 +1,12 @@
-### Pip command [ Python package manager ]
+#[Pip]
 alias pil='pip list'
 alias pif='pip freeze'
 alias pi='pip install'
 alias pir='pip install -r'
 alias pirr='pip install -r requirements.txt'
 alias pirrt='pip install -r requirements.txt --target'
+
+#[Pip package]
 alias pians='pip install ansible'
 alias pipyg='pip install pygments'
 alias pidggsdk='pip install dagger-io'
@@ -27,8 +29,9 @@ alias pigs='pip install gensim'
 alias piscikit='pip install scikit-learn'
 alias pigv='pip install graphviz'
 alias pidgr='pip install diagrams'
+alias pialembic='pip install alembic'
 
-### Pip3
+#[Pip3]
 alias pi3='pip3'
 alias pi3i='pip3 install'
 alias pi3ive='pip3 install virtualenv'
