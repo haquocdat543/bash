@@ -131,3 +131,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/ai/gpt.sh"
 
 # Database
 source "$(dirname "${BASH_SOURCE[0]}")/database/sea-orm-cli.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/database/alembic.sh"
