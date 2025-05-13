@@ -206,6 +206,7 @@ alias gwd='git worktree delete'
 ### Git command [submodule]
 alias gsma='git submodule add'
 alias gsmu='git submodule update'
+alias gsmuirf='git submodule update --init --recursive --force'
 
 ### Git command [tree]
 alias glf='git ls-files'
