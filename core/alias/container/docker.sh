@@ -96,6 +96,8 @@ alias dmsh='docker images history'
 alias dmr='docker image rm'
 alias dmra='docker image rm $(docker images -aq)'
 alias dmp='docker image prune'
+alias dmpa='docker image prune -a'
+alias dmpaf='docker image prune -a -f'
 
 # [Pull]
 alias dpl='docker pull'
