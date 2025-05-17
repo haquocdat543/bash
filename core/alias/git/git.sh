@@ -112,6 +112,7 @@ alias g6='git revert HEAD'
 
 ### Git command [log]
 alias gl='git log'
+alias glr='git log --reverse'
 alias glo='git log --oneline --graph'
 alias glor='git log --oneline --reverse'
 alias glof='git log --oneline --graph --follow --'
