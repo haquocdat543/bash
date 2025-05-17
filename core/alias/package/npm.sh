@@ -1,6 +1,10 @@
-### Node Package Manager
+# [NPM]
 alias nci='npm ci'
 alias ni='npm install'
+alias nins='npm install --no-save'
+alias ninpl='npm install --no-package-lock'
+alias ninsnpl='npm install --no-save --no-package-lock'
+
 alias nr='npm run'
 alias npmi='npm init -y'
 alias npms='npm start'
