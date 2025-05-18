@@ -258,6 +258,7 @@ alias gct='git commit-tree' # git commit-tree <tree_hash> -p <parent_commit_hash
 alias gur='git update-ref' # git update-ref refs/heads/develop 012345ab
 alias gsr='git show-ref'
 alias gsbr='git symbolic-ref'
+alias gsbrh='git symbolic-ref HEAD'
 alias grvp='git rev-parse'
 alias grvl='git rev-list'
 alias gnrv='git name-rev'
