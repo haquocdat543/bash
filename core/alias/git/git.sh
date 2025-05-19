@@ -85,6 +85,7 @@ alias gtg='git commit --allow-empty -m "chore: trigger"'   # Trigger
 alias gfg='git commit --allow-empty -m "feature: trigger"' # Release
 alias gcae="git commit --allow-empty -m"
 alias gcam='git commit --amend'
+alias gcamv='git commit -v --amend'
 alias gca='git commit --amend'
 alias gcamm='git commit --amend -m'
 alias gcan='git commit --amend --no-edit'
