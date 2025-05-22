@@ -96,6 +96,7 @@ alias gcm='git commit -m'
 alias gcs='git commit -S -m'
 alias gC='git commit -a'
 alias gcu='git commit -m "Update"'
+alias gcand='GIT_COMMITTER_DATE="2023-12-01T12:00:00" git commit --amend --no-edit --date "2023-12-01T12:00:00"'
 alias gita='git update-ref $(git symbolic-ref HEAD) $(git commit-tree $(git write-tree) -p $(git rev-parse HEAD) -m "feat(file): git ls files")'
 
 ### Git command [reset]
