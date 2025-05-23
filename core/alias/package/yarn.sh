@@ -20,3 +20,6 @@ alias yaganuxi='yarn global add nuxi@latest'
 alias yagamgsh='yarn global add mongosh'
 alias yagad3='yarn global add d3'
 alias yadggsdk='yarn add @dagger.io/dagger --dev'
+
+# [Yarn]
+alias yacrnu='yarn create nuxt' # yarn create nuxt <project-name>
