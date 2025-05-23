@@ -32,6 +32,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/poetry.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/conan.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/composer.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/bun.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/package/mix.sh"
 
 # Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/ps.sh"
