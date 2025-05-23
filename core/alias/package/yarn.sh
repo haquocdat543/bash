@@ -14,6 +14,7 @@ alias yaalit='yarn add lit'
 # [GLOBAL PACKAGES {Frontend}]
 alias yagavue='yarn global add @vue/cli'
 alias yagaang='yarn global add @angular/cli'
+alias yaganuxi='yarn global add nuxi@latest'
 
 # [GLOBAL PACKAGES {Other}
 alias yagamgsh='yarn global add mongosh'
