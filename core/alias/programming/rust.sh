@@ -8,9 +8,11 @@ alias rstdoc='rustup doc'
 ### cargo command
 alias cgclp='cargo clippy'
 alias cgclpf='cargo clippy --fix'
+
 alias cgc='cargo clean'
 alias cga='cargo add'
 alias cgn='cargo new'
+
 alias cgb='cargo build'
 alias cgbr='cargo build --release'
 alias cgch='cargo check'
@@ -28,3 +30,6 @@ alias cgbc='cargo build --'
 alias vicgt='vim Cargo.toml'
 alias vicgl='vim Cargo.lock'
 alias virs='vim *.rs'
+
+# [Watch]
+alias cgw='cargo watch'
