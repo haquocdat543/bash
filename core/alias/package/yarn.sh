@@ -16,6 +16,8 @@ alias yagavue='yarn global add @vue/cli'
 alias yagaang='yarn global add @angular/cli'
 alias yaganuxi='yarn global add nuxi@latest'
 
+alias yaganestcli='yarn global add @nestjs/cli'
+
 # [GLOBAL PACKAGES {Other}
 alias yagamgsh='yarn global add mongosh'
 alias yagad3='yarn global add d3'
