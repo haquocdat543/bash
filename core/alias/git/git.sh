@@ -332,6 +332,8 @@ alias g19pre='. $HOME/bash/core/script/secretRepositoryPreconfig.sh 1 github.com
 alias g19home='. $HOME/bash/core/script/secretRepositoryPreconfig.sh 2 github.com haquocdat543 secret-suitcase'
 alias gnn='rm -rf $HOME/.config/nvim ; git clone https://github.com/Elteoremadebeethoven/nvim-config.git $HOME/.config/nvim'
 
+alias gsu='sh ${HOME}/bash/core/script/SelfUpdate.sh'
+
 ### Git command
 alias vidgcf='vi $(git rev-parse --show-toplevel)/.git/config'
 alias gcfa='. $HOME/bash/core/script/gitAddAlias.sh'
