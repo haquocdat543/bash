@@ -6,5 +6,6 @@ alias condaa="conda activate"
 
 alias condae="conda env"
 alias condael="conda env list"
+alias condal="conda list -n"
 alias condaee="conda env export > environment.yaml"
 alias condaec="conda env create -f environment.yaml"
