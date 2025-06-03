@@ -1,3 +1,4 @@
+source "$(dirname "${BASH_SOURCE[0]}")/PS.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blesh.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/brew.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/gvm.sh"
