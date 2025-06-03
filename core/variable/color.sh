@@ -1,1 +1,19 @@
 export clr="--color"
+
+export black='\033[0;30m'
+export red='\033[0;31m'
+export green='\033[0;32m'
+export orange='\033[0;33m'
+export blue='\033[0;34m'
+export purple='\033[0;35m'
+export cyan='\033[0;36m'
+export gray='\033[0;37m'
+export gray2='\033[1;30m'
+export red2='\033[1;31m'
+export green2='\033[1;32m'
+export yellow='\033[1;33m'
+export blue2='\033[1;34m'
+export purple2='\033[1;35m'
+export cyan2='\033[1;36m'
+export white='\033[1;37m'
+export nc='\033[0m' # No Color
