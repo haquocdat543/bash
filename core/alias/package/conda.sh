@@ -3,6 +3,7 @@ alias condain="conda init"
 alias condai="conda install"
 alias condac="conda create -n"
 alias condaa="conda activate"
+alias condad="conda deactivate"
 
 alias condae="conda env"
 alias condael="conda env list"
