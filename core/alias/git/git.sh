@@ -333,6 +333,7 @@ alias g19home='. $HOME/bash/core/script/secretRepositoryPreconfig.sh 2 github.co
 alias gnn='rm -rf $HOME/.config/nvim ; git clone https://github.com/Elteoremadebeethoven/nvim-config.git $HOME/.config/nvim'
 
 alias gsu='sh ${HOME}/bash/core/script/SelfUpdate.sh'
+alias gsun='sh ${HOME}/bash/core/script/SelfUpdateNix.sh'
 
 ### Git command
 alias vidgcf='vi $(git rev-parse --show-toplevel)/.git/config'
