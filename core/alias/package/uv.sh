@@ -1,7 +1,7 @@
 # [UV]
 alias uvi="uv init"
 alias uvac=". .venv/bin/activate"
-alias uvde=". .venv/bin/deactivate"
+alias uvde="deactivate"
 
 alias uva="uv add"
 alias uvr="uv remove"
