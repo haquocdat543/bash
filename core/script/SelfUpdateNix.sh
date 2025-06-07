@@ -4,4 +4,4 @@ cd ${HOME}/mine/product/nix
 
 git fetch
 
-git reset --hard origin/master
+git reset --hard origin/develop
