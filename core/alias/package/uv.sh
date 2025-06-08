@@ -1,5 +1,6 @@
 # [UV]
 alias uvi="uv init"
+alias uviap="uv init --app --python"
 alias uvac=". .venv/bin/activate"
 alias uvde="deactivate"
 
