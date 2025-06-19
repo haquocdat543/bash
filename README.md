@@ -6,7 +6,7 @@ Prerequisites:
 * git
 
 ```bash
-TOKEN="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"
+TOKEN="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"
 URL="https://${TOKEN}@github.com/haquocdat543/bash"
 git clone "${URL}" ${HOME}/bash
 
