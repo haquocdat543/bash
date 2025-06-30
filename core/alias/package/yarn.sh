@@ -10,6 +10,7 @@ alias yarnall='yacc && rfya && yarn && yas'
 
 # [PACKAGES]
 alias yaalit='yarn add lit'
+alias yaari='yarn add react-icons'
 
 # [GLOBAL PACKAGES {Frontend}]
 alias yagavue='yarn global add @vue/cli'
