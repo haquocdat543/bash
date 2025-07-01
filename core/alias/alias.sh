@@ -128,6 +128,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/blockchain/osmosis.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/hermes.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gaia.sh"
 
+# Frontend
+source "$(dirname "${BASH_SOURCE[0]}")/frontend/ng.sh"
+
 # Generation
 source "$(dirname "${BASH_SOURCE[0]}")/generation/key.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/generation/random.sh"
