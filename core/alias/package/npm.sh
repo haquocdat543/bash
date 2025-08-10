@@ -37,4 +37,8 @@ alias febs='npm install --save @backstage/plugin-kubernetes-frontend'
 
 # [Vite]
 alias npmvite="npm create vite@latest . -- --template" # Args [vanilla, vanilla-ts, vue, vue-ts, react, react-ts, react-swc, react-swc-ts, preact, preact-ts, lit, lit-ts, svelte, svelte-ts, solid, solid-ts, qwik, qwik-ts]
+
 alias npmastro="npm create astro@latest"
+alias npmgatsby="npm init gatsby"
+alias npmnext="npx create-next-app@latest ."
+alias npmsvelte="npm create svelte@latest"
