@@ -9,3 +9,5 @@ alias fzm='filepath=$(fzf) ; mv $filepath'
 alias fzmm='filepath=$(fzf) ; mv $filepath .'
 alias fzr='filepath=$(fzf) ; rm $filepath'
 alias fzrf='filepath=$(fzf) ; rf $filepath'
+
+alias frp='find . -type f -name "*.jsx" -exec sed -i "" -E "s/motion-delay-[^ ]+\]//g" {} +'
