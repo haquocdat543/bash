@@ -139,6 +139,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/generation/random.sh"
 # AI
 source "$(dirname "${BASH_SOURCE[0]}")/ai/gpt.sh"
 
+# DATA
+source "$(dirname "${BASH_SOURCE[0]}")/data/dbt.sh"
+
 # Database
 source "$(dirname "${BASH_SOURCE[0]}")/database/sea-orm-cli.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/database/alembic.sh"
