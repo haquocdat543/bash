@@ -1,4 +1,3 @@
-
 ### Git command [init]
 alias gi='git init'
 
@@ -108,6 +107,7 @@ alias gnk='git reset --hard HEAD && git clean -fd' # git nuke
 
 ### Git command [restore]
 alias grst='git restore'
+alias grsta='git restore .'
 
 ### Git command [revert]
 alias grv='git revert'
@@ -258,7 +258,7 @@ alias ghow='git hash-object -w'
 alias guia='git update-index --add'
 alias gwt='git write-tree'
 alias gct='git commit-tree' # git commit-tree <tree_hash> -p <parent_commit_hash> -m "Your commit message"
-alias gur='git update-ref' # git update-ref refs/heads/develop 012345ab
+alias gur='git update-ref'  # git update-ref refs/heads/develop 012345ab
 alias gsr='git show-ref'
 alias gsbr='git symbolic-ref'
 alias gsbrh='git symbolic-ref HEAD'
