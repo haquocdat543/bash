@@ -131,6 +131,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gaia.sh"
 
 # Frontend
 source "$(dirname "${BASH_SOURCE[0]}")/frontend/ng.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/frontend/flutter.sh"
 
 # Generation
 source "$(dirname "${BASH_SOURCE[0]}")/generation/key.sh"
