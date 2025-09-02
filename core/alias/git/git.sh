@@ -100,9 +100,39 @@ alias gita='git update-ref $(git symbolic-ref HEAD) $(git commit-tree $(git writ
 
 ### Git command [reset]
 alias grs='git reset'
-alias grsm='git reset --mixed'
 alias grsh='git reset --hard'
+alias grsh1='git reset --hard head~1'
+alias grsh2='git reset --hard head~2'
+alias grsh3='git reset --hard head~3'
+alias grsh4='git reset --hard head~4'
+alias grsh5='git reset --hard head~5'
+alias grsh6='git reset --hard head~6'
+alias grsh7='git reset --hard head~7'
+alias grsh8='git reset --hard head~8'
+alias grsh9='git reset --hard head~9'
+
+alias grsm='git reset --mixed'
+alias grsm1='git reset --mixed head~1'
+alias grsm2='git reset --mixed head~2'
+alias grsm3='git reset --mixed head~3'
+alias grsm4='git reset --mixed head~4'
+alias grsm5='git reset --mixed head~5'
+alias grsm6='git reset --mixed head~6'
+alias grsm7='git reset --mixed head~7'
+alias grsm8='git reset --mixed head~8'
+alias grsm9='git reset --mixed head~9'
+
 alias grss='git reset --soft'
+alias grss1='git reset --soft head~1'
+alias grss2='git reset --soft head~2'
+alias grss3='git reset --soft head~3'
+alias grss4='git reset --soft head~4'
+alias grss5='git reset --soft head~5'
+alias grss6='git reset --soft head~6'
+alias grss7='git reset --soft head~7'
+alias grss8='git reset --soft head~8'
+alias grss9='git reset --soft head~9'
+
 alias gnk='git reset --hard HEAD && git clean -fd' # git nuke
 
 ### Git command [restore]
