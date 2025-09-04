@@ -1,3 +1,4 @@
+source "$(dirname "${BASH_SOURCE[0]}")/lang.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/PS.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/java.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blesh.sh"
