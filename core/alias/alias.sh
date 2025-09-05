@@ -41,6 +41,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/package/bun.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/mix.sh"
 
 # Visualization
+source "$(dirname "${BASH_SOURCE[0]}")/cryptography/zlat.sh"
+
+# Visualization
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/ps.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/bat.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
