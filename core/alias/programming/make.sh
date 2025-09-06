@@ -17,8 +17,5 @@ alias atmam='automake --add-missing'
 alias rcf='./configure'
 alias rcfb='./configure --prefix=/usr/local/bin'
 alias rcfbd='./configure --prefix=/usr/local/bin --disable-multilib'
-alias cmk='cmake'
-alias cmk..='cmake ../'
-alias cmkd='cmake -D'
 alias mkgcc='. $HOME/bash/core/script/makeGcc.sh'
 
