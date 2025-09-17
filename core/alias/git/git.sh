@@ -179,6 +179,7 @@ alias glau="git log --graph --format='%aN' | sort | uniq"
 
 ### Git command [merge]
 alias gmfo='git merge --ff-only'
+alias gmnf='git merge --no-ff'
 
 ### Git command [rebase]
 alias grb='git rebase'
