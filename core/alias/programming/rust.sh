@@ -9,9 +9,12 @@ alias rstdoc='rustup doc'
 alias cgclp='cargo clippy'
 alias cgclpf='cargo clippy --fix'
 
+alias cgs='cargo search'
+
 alias cgc='cargo clean'
 alias cga='cargo add'
 alias cgn='cargo new'
+alias cgin='cargo init'
 
 alias cgb='cargo build'
 alias cgbr='cargo build --release'
