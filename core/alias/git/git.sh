@@ -230,6 +230,7 @@ alias gpl='git pull'
 alias gplom='git pull origin main'
 alias gf='git fetch'
 alias gfat='git fetch --all --tags'
+alias grpk='git receive-pack'
 
 ### Git command [push]
 alias gp='git push'
@@ -242,6 +243,7 @@ alias gpt='git push --tags'
 alias gpat='git push --all --tags'
 alias gpot='git push origin --tags'
 alias gpomf='git push origin main -f'
+alias gspk='git send-pack'
 
 ### Git command [tag]
 alias gt='git tag'
