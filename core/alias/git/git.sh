@@ -178,6 +178,8 @@ alias gle='git log --graph -1 --pretty="format:%aD"'                    # Find d
 alias glau="git log --graph --format='%aN' | sort | uniq"
 
 ### Git command [merge]
+alias gm='git merge'
+alias gmsq='git merge --squash'
 alias gmfo='git merge --ff-only'
 alias gmnf='git merge --no-ff'
 
