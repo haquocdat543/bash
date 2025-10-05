@@ -1,5 +1,5 @@
 # Optional symbols (works in most terminals)
-branch_symbol="🌿"
+branch_symbol=""
 dirty_symbol="✗"
 clean_symbol="✔"
 
@@ -12,10 +12,10 @@ parse_git_branch() {
 	# Check for changes
 	if ! git diff --quiet 2>/dev/null; then
 		# Repo is dirty
-		echo "${branch_symbol} ${branch} ${red}${dirty_symbol}${reset}"
+		echo "${branch} ${red}${dirty_symbol}${reset}"
 	else
 		# Clean repo
-		echo "${branch_symbol} ${branch} ${green}${clean_symbol}${reset}"
+		echo "${branch} ${green}${clean_symbol}${reset}"
 	fi
 }
 
@@ -24,7 +24,7 @@ PROMPT_COMMAND='
   git_info=$(parse_git_branch)
   PS1="[${red}\u${nc}@${yellow}\h${nc} ${green}\w${nc} ${cyan}{\#}${nc}]"
   if [ -n "$git_info" ]; then
-    PS1+=" (${cyan}${bold}${git_info}${reset}${nc})"
+		PS1+=" (${branch_symbol} ${cyan}${bold}${git_info}${reset}${nc})"
   fi
 	PS1+=" (\s \V)\n${bold}${green}→${nc}${reset} "
 '
