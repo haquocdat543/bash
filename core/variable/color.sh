@@ -1,5 +1,7 @@
 export clr="--color"
 
+export bold='\[\033[1m\]'
+export reset='\[\033[0m\]'
 export black='\033[0;30m'
 export red='\033[0;31m'
 export green='\033[0;32m'

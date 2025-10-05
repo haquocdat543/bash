@@ -24,7 +24,7 @@ PROMPT_COMMAND='
   git_info=$(parse_git_branch)
   PS1="[${red}\u${nc}@${yellow}\h${nc} ${green}\w${nc} ${cyan}{\#}${nc}]"
   if [ -n "$git_info" ]; then
-    PS1+=" (${cyan}${git_info}${nc})"
+    PS1+=" (${cyan}${bold}${git_info}${reset}${nc})"
   fi
 	PS1+=" (\s \V)\n${bold}${green}→${nc}${reset} "
 '
