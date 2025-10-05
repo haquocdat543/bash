@@ -19,12 +19,12 @@ parse_git_branch() {
 	fi
 }
 
-# --- Update PS1 dynamically ---
+# --- Dynamically update PS1 each time ---
 PROMPT_COMMAND='
   git_info=$(parse_git_branch)
-  PS1="${bold}${blue}\u${reset}@${yellow}\h${reset} ${green}\w${reset}"
+  PS1="[${red}\u${nc}@${yellow}\h${nc} ${green}\w${nc} ${cyan}{\#}${nc}]"
   if [ -n "$git_info" ]; then
-    PS1+=" ${cyan}[${git_info}]${reset}"
+    PS1+=" (${cyan}${git_info}${nc})"
   fi
-  PS1+="\n${bold}→${reset} "
+	PS1+=" (\s \V)\n${bold}${green}→${nc}${reset} "
 '
