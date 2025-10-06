@@ -26,5 +26,5 @@ PROMPT_COMMAND='
   if [ -n "$git_info" ]; then
 		PS1+=" (${branch_symbol} ${cyan}${bold}${git_info}${reset}${nc})"
   fi
-	PS1+=" (\s \V)\n${bold}${green}→${nc}${reset} "
+	PS1+=" <\s \V>\n${bold}${green}→${nc}${reset} "
 '
