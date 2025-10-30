@@ -42,3 +42,5 @@ alias npmastro="npm create astro@latest"
 alias npmgatsby="npm init gatsby"
 alias npmnext="npx create-next-app@latest ."
 alias npmsvelte="npm create svelte@latest"
+
+alias nistrudel="install -g @strudel/repl"
