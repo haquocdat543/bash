@@ -1,0 +1,26 @@
+[blockchain]
+explorer = [
+  "https://www.blockchain.com/explorer/blocks/btc",
+  "https://etherscan.io/",
+  "https://www.mintscan.io/",
+  "https://ping.pub/",
+]
+
+registry = ["https://chainid.network/", "https://chainlist.org/"]
+
+faucet = [
+  "https://sepoliafaucet.com",
+  "https://faucet.quicknode.com/ethereum/sepolia",
+  "https://www.infura.io/faucet/sepolia",
+]
+rpc = [
+  "https://infura.io",
+  "https://alchemy.com",
+  "https://ethereum-sepolia.publicnode.com",
+]
+
+docs = [
+  "https://forum.cosmos.network/t/list-of-projects-in-cosmos-tendermint-ecosystem/243",
+  "https://junonetwork.io/",
+  "https://docs.junonetwork.io/",
+]
