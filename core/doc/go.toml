@@ -1,0 +1,21 @@
+bin = ["air", "reflex"]
+std = ["fmt", "math", "base64", "net/http", "strconv", "regexp"]
+
+[dep]
+cli = ["https://github.com/spf13/cobra"]
+yaml = ["https://github.com/spf13/viper"]
+json = ["https://github.com/tidwall/gjson"]
+database = ["https://github.com/go-gorm/gorm"]
+log = ["https://github.com/uber-go/zap"]
+rest = ["https://github.com/gin-gonic/gin", "https://github.com/gofiber/fiber"]
+auth = ["https://github.com/gin-contrib/cors"]
+test = ["https://github.com/onsi/ginkgo", "https://github.com/stretchr/testify"]
+data = ["https://github.com/gonum/gonum"]
+ai = [
+  "https://github.com/gorgonia/gorgonia",
+  "https://github.com/cloudwego/eino",
+]
+cosmos = [
+  "https://github.com/cosmos/cosmos-sdk",
+  "https://github.com/cosmos/ibc-go",
+]
