@@ -1,0 +1,104 @@
+[bin]
+[bin.dev]
+components = [
+  "rustup",
+  "rustc",
+  "https://github.com/rust-lang/rustfmt",
+  "rustdoc",
+  "https://github.com/rust-lang/rust-clippy",
+  "https://github.com/rust-lang/miri",
+]
+cargo = [
+  "https://github.com/killercup/cargo-edit",
+  "https://github.com/nabijaczleweli/cargo-update",
+  "https://github.com/watchexec/cargo-watch",
+  "https://github.com/dtolnay/cargo-expand",
+  "https://github.com/nextest-rs/nextest",
+  "audit",
+  "https://github.com/EmbarkStudios/cargo-deny",
+  "https://github.com/RazrFalcon/cargo-bloat",
+  "https://github.com/dtolnay/cargo-llvm-lines",
+  "https://github.com/bheisler/cargo-criterion",
+  "https://github.com/Kobzol/cargo-wizard",
+  "https://github.com/xd009642/tarpaulin",
+  "https://github.com/LukeMathWalker/cargo-chef",
+  "https://github.com/flamegraph-rs/flamegraph",
+  "https://github.com/geiger-rs/cargo-geiger",
+  "https://github.com/rust-cross/cargo-zigbuild",
+  "https://github.com/kbknapp/cargo-outdated",
+  "https://github.com/est31/cargo-udeps",
+  "https://github.com/bnjbvr/cargo-machete",
+  "https://github.com/rust-fuzz/cargo-fuzz",
+  "msrv",
+  "insta",
+  "make",
+  "dist",
+  "px",
+  "deb",
+  "generate",
+  "pkg",
+  "https://github.com/StratusFearMe21/cargo-appimage",
+  "embed",
+  "flash",
+  "readobj",
+  "modules",
+  "tree",
+  "graph",
+  "https://github.com/drahnr/cargo-spellchec",
+  "size",
+  "asm",
+  "crev",
+  "sbom",
+  "https://github.com/rust-lang/rust-analyzer",
+  "https://github.com/Canop/bacon",
+]
+
+bin = [
+  "https://github.com/starship/starship",
+  "https://github.com/GitoxideLabs/gitoxide",
+  "https://github.com/jdx/mise",
+  "https://github.com/casey/just",
+  "https://github.com/ajeetdsouza/zoxide",
+  "https://github.com/httpmock/httpmock",
+]
+
+std = [""]
+
+[tech]
+cli = ["https://github.com/clap-rs/clap"]
+datetime = ["https://github.com/chronotope/chrono"]
+terminal = ["https://github.com/JohnTitor/termize"]
+color = [
+  "https://github.com/colored-rs/colored",
+  "https://gitlab.com/dajoha/color-print",
+]
+crypto = [
+  "https://github.com/RustCrypto/hashes",
+  "https://github.com/rust-random/rand",
+  "https://github.com/baoyachi/sha256-rs",
+  "https://github.com/marshallpierce/rust-base64",
+]
+rest = [
+  "https://github.com/actix/actix",
+  "https://github.com/tokio-rs/axum",
+  "https://github.com/rwf2/Rocket",
+  "https://github.com/seanmonstar/warp",
+]
+html = [
+  "https://github.com/DioxusLabs/dioxus",
+  "https://github.com/leptos-rs/leptos",
+  "https://github.com/marc2332/freya",
+  "https://github.com/iced-rs/iced",
+]
+test = [
+  "https://github.com/la10736/rstest",
+  "https://github.com/asomers/mockall",
+  "httpmock",
+]
+lazy = ["https://github.com/matklad/once_cell"]
+web3 = [
+  "https://github.com/paradigmxyz/reth",
+  "https://github.com/foundry-rs/foundry",
+  "https://github.com/a16z/helios",
+  "https://crates.io/crates/cosmwasm-std",
+]
