@@ -1,0 +1,12 @@
+blockchain = [
+  # Cosmos # tool
+  "https://hub.docker.com/r/informalsystems/hermes",
+  "https://hub.docker.com/r/cosmwasm/optimizer",
+  "https://hub.docker.com/r/cosmwasm/workspace-optimizer",
+
+  # Cosmos # chain
+  "https://ghcr.io/cosmos/gaia",
+  "https://ghcr.io/cosmoscontracts/juno",
+  "https://hub.docker.com/r/osmolabs/osmosis",
+  "ghcr.io/noble-assets/noble",
+]
