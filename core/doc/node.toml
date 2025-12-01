@@ -1,0 +1,92 @@
+[packages]
+prod = [
+  # Logging
+  "https://github.com/pinojs/pino",
+  "https://github.com/winstonjs/winston",
+]
+dev = ["https://github.com/remy/nodemon"]
+
+[tech]
+html = [
+  "https://github.com/vitejs/vite",
+  "https://github.com/tailwindlabs/tailwindcss",
+
+  ## Angular
+  "https://github.com/angular/angular.js",
+
+  ## React
+  "https://github.com/facebook/react",
+  "https://github.com/remix-run/react-router",
+
+  ### UI
+  "https://github.com/tailwindlabs/headlessui",
+  "https://github.com/romboHQ/tailwindcss-motion",
+  "https://github.com/react-icons/react-icons",
+  "https://github.com/ant-design/ant-design",
+]
+
+datetime = ["https://github.com/iamkun/dayjs/"]
+
+database = [
+  "https://github.com/typeorm/typeorm",
+  "https://github.com/dexie/Dexie.js",
+]
+
+test = [
+  "https://github.com/testing-library/react-testing-library",
+  "https://github.com/testing-library/dom-testing-library",
+  "https://github.com/jasmine/jasmine",
+  "https://github.com/jestjs/jest",
+  "https://github.com/microsoft/playwright",
+  "https://github.com/cypress-io/cypress",
+  "https://github.com/chaijs/chai",
+]
+
+development = [
+  "https://github.com/remy/nodemon",
+  "https://github.com/Unitech/pm2",
+]
+
+build = ["https://github.com/gulpjs/gulp"]
+
+validate = [
+  "https://github.com/colinhacks/zod",
+  "https://github.com/hapijs/joi",
+  "https://github.com/jquense/yup",
+  "https://github.com/jaredpalmer/formik",
+]
+
+state = [
+  "https://github.com/pmndrs/zustand",
+  "https://github.com/reduxjs/redux",
+]
+
+query = ["https://github.com/TanStack/query"]
+
+linter = ["https://github.com/eslint/eslint"]
+
+extend = [
+  "https://github.com/vercel/next.js",
+  "https://github.com/preactjs/preact",
+]
+
+vue = ["https://github.com/vuejs/vue", "https://github.com/vuejs/router"]
+
+backend = [
+  "https://github.com/nestjs/nest",
+  "https://github.com/expressjs/express",
+]
+
+cli = ["https://github.com/tj/commander.js?"]
+
+format = ["https://github.com/chalk/chalk"]
+
+blockchain = [
+  "https://github.com/ConsenSys-archive/truffle",
+  "https://github.com/NomicFoundation/hardhat",
+  "https://github.com/OpenZeppelin/openzeppelin-contracts",
+  "https://github.com/web3/web3.js",
+  "https://github.com/ethers-io/ethers.js",
+  "https://github.com/wevm/viem",
+  "https://github.com/wevm/wagmi",
+]
