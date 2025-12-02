@@ -1,0 +1,56 @@
+[org]
+blockchain = [
+  "https://github.com/dappuniversity",
+  "https://github.com/ccxt",
+  "https://github.com/decentrio",
+  "https://github.com/orbitorg",
+  "https://github.com/aura-nw",
+  "https://github.com/ark-us",
+  "https://github.com/envoylabs/",
+
+  "https://github.com/paritytech",
+
+  # Cosmos
+  "https://github.com/cosmos/awesome-cosmos",
+  "https://github.com/cosmos",
+  "https://github.com/CosmWasm",
+  "https://github.com/confio",
+  "https://github.com/hyperweb-io",
+  "https://github.com/informalsystems",
+  "https://github.com/firmachain",
+  "https://github.com/crypto-org-chain",
+  "https://github.com/noble-assets",
+  "https://github.com/KiraCore",
+  "https://github.com/Team-Kujira",
+  "https://github.com/persistenceOne",
+  "https://github.com/aragon",
+  "https://github.com/e-money",
+  "https://github.com/sentinel-official",
+  "https://github.com/hyperledger-archives",
+  "https://github.com/irisnet/",
+  "https://github.com/iov-one",
+  "https://github.com/datopia",
+  "https://github.com/likecoin",
+  "https://github.com/akash-network",
+]
+
+ai = ["https://github.com/WasmEdge"]
+
+[user]
+blockchain = [
+  # Notional Ventures
+  "https://github.com/faddat",
+  "https://github.com/baabeetaa",
+  "https://github.com/TropicalDog17",
+  "https://github.com/kien6034",
+  "https://github.com/hoank101",
+  "https://github.com/minhngoc270499",
+  "https://github.com/tungleanh0902",
+  "https://github.com/hakuno2000",
+
+  # Hyperlane
+  "https://github.com/nambrot",
+
+  # IDK
+  "https://github.com/vinhyenvodoi98",
+]
