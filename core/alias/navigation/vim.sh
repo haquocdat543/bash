@@ -3,6 +3,7 @@ alias vimc='vim main.c'
 alias vim="nvim"
 alias v="vim"
 alias n="nvim"
+alias nn="nvim -u NONE"
 alias vnv='vim $HOME/.config/nvim/init.vim'
 alias vil='vim $HOME/.config/nvim/init.lua'
 alias vilk='vim $HOME/Suitcase/bash/link.txt'
