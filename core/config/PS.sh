@@ -5,12 +5,29 @@ clean_symbol="✔"
 
 # --- Function: Show Git branch and status ---
 parse_git_branch() {
-	# Get branch name
-	local branch=$(git branch --show-current 2>/dev/null)
-	[ -z "$branch" ] && return # not in git repo
+	# Check if we're in a git repo
+	git rev-parse --is-inside-work-tree &>/dev/null || return
 
-	# Check for changes
-	if ! git diff --quiet 2>/dev/null; then
+	# Try to get branch name
+	local branch
+	branch=$(git symbolic-ref --short -q HEAD 2>/dev/null)
+
+	# If branch is empty → detached HEAD
+	if [ -z "$branch" ]; then
+		# Try tag first
+		local tag
+		tag=$(git describe --tags --exact-match 2>/dev/null)
+
+		if [ -n "$tag" ]; then
+			branch="$tag"
+		else
+			# Fall back to short commit hash
+			branch="$(git rev-parse --short HEAD 2>/dev/null)"
+		fi
+	fi
+
+	# Check for uncommitted changes
+	if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
 		# Repo is dirty
 		echo "${branch} ${red}${dirty_symbol}${reset}"
 	else
