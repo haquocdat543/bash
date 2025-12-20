@@ -1,5 +1,8 @@
 [org]
 blockchain = [
+  # Bitcoin
+  "https://github.com/dappuniversity",
+
   "https://github.com/dappuniversity",
   "https://github.com/ccxt",
   "https://github.com/decentrio",
@@ -53,4 +56,54 @@ blockchain = [
 
   # IDK
   "https://github.com/vinhyenvodoi98",
+]
+
+[repo]
+blockchain = [
+  # Bitcoin
+  "https://github.com/bitcoin/bitcoin",
+  "https://github.com/bitcoin/bips",
+
+  "https://github.com/bitcoin-core/gui",
+  "https://github.com/bitcoin-core/secp256k1",
+  "https://github.com/bitcoin-core/HWI",
+
+  "https://github.com/bitcoinknots/bitcoin",
+  "https://github.com/libbitcoin/libbitcoin-system",
+  "https://github.com/btcsuite/btcd",
+  "https://github.com/bcoin-org/bcoin",
+
+  "https://github.com/ElementsProject/lightning",
+  "https://github.com/lightningnetwork/lnd",
+  "https://github.com/ACINQ/eclair",
+
+  "https://github.com/lightninglabs/loop",
+  "https://github.com/lightninglabs/pool",
+
+  "https://github.com/spesmilo/electrum",
+  "https://github.com/sparrowwallet/sparrow",
+  "https://github.com/zkSNACKs/WalletWasabi",
+  "https://github.com/BlueWallet/BlueWallet",
+
+  "https://github.com/bitcoinj/bitcoinj",
+  "https://github.com/MetacoSA/NBitcoin",
+  "https://github.com/bitcoinjs/bitcoinjs-lib",
+
+  "https://github.com/bitcoin-core/secp256k1",
+  "https://github.com/bitcoin-core/miniscript",
+  "https://github.com/rust-bitcoin/rust-bitcoin",
+  "https://github.com/rust-bitcoin/rust-miniscript",
+
+  "https://github.com/romanz/electrs",
+  "https://github.com/Blockstream/esplora",
+  "https://github.com/cculianu/Fulcrum",
+  "https://github.com/dgarage/NBXplorer",
+
+  "https://github.com/mempool/mempool",
+  "https://github.com/janoside/btc-rpc-explorer",
+
+  "https://github.com/ckolivas/cgminer",
+  "https://github.com/luke-jr/bfgminer",
+
+  "https://github.com/stratum-mining/stratum",
 ]
