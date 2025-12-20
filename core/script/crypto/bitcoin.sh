@@ -49,9 +49,9 @@ install_packages
 
 git clone \
 	https://github.com/bitcoin/bitcoin.git \
-	"${HOME}/bitcoin"
+	"${HOME}/mine/project/crypto/bitcoin"
 
-cd "${HOME}/bitcoin" || exit
+cd "${HOME}/mine/project/crypto/bitcoin" || exit
 
 cm1
 cm2
