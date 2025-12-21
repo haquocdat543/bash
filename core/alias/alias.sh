@@ -133,6 +133,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gm.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/osmosis.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/hermes.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/blockchain/gaia.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/blockchain/bitcoin.sh"
 
 # Frontend
 source "$(dirname "${BASH_SOURCE[0]}")/frontend/ng.sh"
