@@ -4,6 +4,9 @@ install_packages() {
 	if [ -f /etc/os-release ]; then
 		. /etc/os-release
 		OS_ID=$ID
+	elif [[ "$(uname -s)" == "Darwin" ]]; then
+		# macOS
+		OS_ID="darwin"
 	else
 		echo "Cannot detect OS"
 		return 1
