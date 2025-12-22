@@ -1,5 +1,7 @@
 source "${HOME}/bash/core/script/util/packages.sh"
 
+TAG=v30.1
+
 DEBIAN_PACKAGES="
 git
 cmake
@@ -48,6 +50,7 @@ capnp
 install_packages
 
 git clone \
+	--branch ${TAG} \
 	https://github.com/bitcoin/bitcoin.git \
 	"${HOME}/mine/project/crypto/bitcoin"
 
