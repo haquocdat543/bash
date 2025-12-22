@@ -1,3 +1,4 @@
+source "$(dirname "${BASH_SOURCE[0]}")/alias.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/aws.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/base64.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/color.sh"
