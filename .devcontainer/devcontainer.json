@@ -1,0 +1,44 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "containerEnv": {
+    "SHELL": "/bin/bash",
+
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8",
+    "EDITOR": "nvim",
+    "TERM": "xterm-256color"
+  },
+  "mounts": [
+    "type=bind,source=${env:HOME}/.config/nvim,target=/root/.config/nvim",
+    "type=bind,source=${env:HOME}/.bashrc,target=/root/.bashrc",
+    "type=bind,source=${env:HOME}/bash,target=/root/bash"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "ssh,git,fd-find,gcc,g++,make,python3,nodejs,npm,xclip,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,lua5.1,luarocks,libncurses-dev,libtinfo-dev"
+    },
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+      "version": "stable"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "toolsToInstall": "pynvim"
+    },
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
+      "PACKAGES": "github.com/cosmtrek/air@latest,github.com/jesseduffield/lazygit@latest"
+    },
+    "ghcr.io/braun-daniel/devcontainer-features/fzf:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {
+      "components": "rust-analyzer,rust-src,rustfmt,clippy"
+    },
+    "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {}
+  },
+  "postCreateCommand": "yes | cargo binstall zoxide ripgrep fd-find sd exa rustowl",
+  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && git config --global init.defaultBranch master",
+  "remoteUser": "root"
+}
