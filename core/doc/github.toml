@@ -41,6 +41,11 @@ ai = ["https://github.com/WasmEdge"]
 
 [user]
 blockchain = [
+  # Bitcoin
+  "https://github.com/kanoi",
+  "https://github.com/wareck",
+  "https://github.com/luke-jr",
+
   # Notional Ventures
   "https://github.com/faddat",
   "https://github.com/baabeetaa",
