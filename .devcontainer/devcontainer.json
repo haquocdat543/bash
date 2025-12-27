@@ -5,7 +5,6 @@
   },
   "containerEnv": {
     "SHELL": "/bin/bash",
-
     "LANG": "en_US.UTF-8",
     "LC_ALL": "en_US.UTF-8",
     "EDITOR": "nvim",
@@ -22,9 +21,7 @@
       "packages": "ssh,git,fd-find,gcc,g++,make,python3,nodejs,npm,xclip,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,lua5.1,luarocks,libncurses-dev,libtinfo-dev",
       "upgradePackages": false
     },
-    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
-      "version": "stable"
-    },
+    "ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
     "ghcr.io/devcontainers/features/python:1": {
       "toolsToInstall": "pynvim"
     },
@@ -47,14 +44,18 @@
     "ghcr.io/devcontainers/features/docker-in-docker",
     "ghcr.io/devcontainers/features/python",
     "ghcr.io/braun-daniel/devcontainer-features/fzf",
-    "ghcr.io/duduribeiro/devcontainer-features/neovim",
+    "ghcr.io/duduribeiro/devcontainer-features/lunarvim",
     "ghcr.io/devcontainers/features/go",
     "ghcr.io/azutake/devcontainer-features/go-packages-install",
     "ghcr.io/devcontainers/features/rust",
     "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall",
     "ghcr.io/devcontainers/features/dotnet"
   ],
-  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && git config --global init.defaultBranch master",
   "remoteUser": "root"
 }
