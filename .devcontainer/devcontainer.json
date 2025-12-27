@@ -17,8 +17,12 @@
   ],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/prulloac/devcontainer-features/lua:1": {
+      "version": "5.1.5",
+      "useApt": true
+    },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "ssh,git,build-essential,gcc,g++,make,python3,nodejs,npm,xclip,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,lua5.1,luarocks,libncurses-dev,libtinfo-dev",
+      "packages": "ssh,git,build-essential,gcc,g++,make,python3,luarocks,nodejs,npm,xclip,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
       "upgradePackages": false
     },
     "ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
@@ -36,10 +40,14 @@
     "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {
       "packages": "zoxide,ripgrep,fd-find,sd,exa,rustowl"
     },
+    "ghcr.io/devcontainers-extra/features/bash-command:1": {
+      "command": "luarocks install nvim-nio && luarocks install mimetypes && luarocks install xml2lua && luarocks install fidget.nvim"
+    },
     "ghcr.io/devcontainers/features/dotnet:2": {}
   },
   "overrideFeatureInstallOrder": [
     "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/prulloac/devcontainer-features/lua:1",
     "ghcr.io/rocker-org/devcontainer-features/apt-packages",
     "ghcr.io/devcontainers/features/docker-in-docker",
     "ghcr.io/devcontainers/features/python",
