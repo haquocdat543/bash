@@ -7,6 +7,8 @@ alias cmc='cmake -S . -B build'
 
 alias cm2='cmake --build build'
 alias cmb='cmake --build build'
+alias cm21='cmake --build build -- -j1'
+alias cmb1='cmake --build build -- -j1'
 
 alias cm3='cmake --install build --prefix .'
 alias cmi='cmake --install build --prefix .'
