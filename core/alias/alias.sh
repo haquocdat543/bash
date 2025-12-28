@@ -128,6 +128,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/programming/node.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/make.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/cmake.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/autotool.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/programming/pkg-config.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/programming/devcontainer.sh"
 
 # Blockchain
