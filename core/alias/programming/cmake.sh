@@ -14,3 +14,6 @@ alias cm3='cmake --install build --prefix .'
 alias cmi='cmake --install build --prefix .'
 
 alias cma='cm1; cm2; cm3'
+
+alias cmp='cmake --preset '
+alias cm4='cmake --preset '
