@@ -14,6 +14,7 @@
     "TERM": "xterm-256color"
   },
   "mounts": [
+    "type=bind,source=${env:HOME}/.vimrc,target=/root/.vimrc",
     "type=bind,source=${env:HOME}/.config/nvim,target=/root/.config/nvim",
     "type=bind,source=${env:HOME}/.bashrc,target=/root/.bashrc",
     "type=bind,source=${env:HOME}/bash,target=/root/bash"
