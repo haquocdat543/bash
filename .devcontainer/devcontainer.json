@@ -26,12 +26,12 @@
       "useApt": true
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "ssh,git,build-essential,gcc,g++,make,python3,luarocks,nodejs,npm,xclip,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
+      "packages": "ssh,git,build-essential,ninja-build,gcc,g++,make,python3,luarocks,nodejs,npm,xclip,xxd,ranger,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
       "upgradePackages": false
     },
     "ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
     "ghcr.io/devcontainers/features/python:1": {
-      "toolsToInstall": "pynvim"
+      "toolsToInstall": "pynvim,conan"
     },
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
@@ -42,7 +42,7 @@
       "components": "rust-analyzer,rust-src,rustfmt,clippy"
     },
     "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall:0": {
-      "packages": "zoxide,ripgrep,fd-find,sd,exa,rustowl"
+      "packages": "zoxide,ripgrep,fd-find,sd,exa,bat,rustowl"
     },
     "ghcr.io/devcontainers-extra/features/bash-command:1": {
       "command": "luarocks install nvim-nio && luarocks install mimetypes && luarocks install xml2lua && luarocks install fidget.nvim"
