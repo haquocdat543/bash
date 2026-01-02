@@ -73,6 +73,7 @@ blockchain = [
 
   "https://github.com/bitcoin-core/gui",
   "https://github.com/bitcoin-core/secp256k1",
+  "https://github.com/bitcoin-core/secp256k1",
   "https://github.com/bitcoin-core/HWI",
 
   "https://github.com/bitcoinknots/bitcoin",
@@ -100,6 +101,8 @@ blockchain = [
   "https://github.com/bitcoin-core/miniscript",
   "https://github.com/rust-bitcoin/rust-bitcoin",
   "https://github.com/rust-bitcoin/rust-miniscript",
+  "https://github.com/rust-bitcoin/rust-bip39",
+  "https://github.com/coreyphillips/bitcoin-address-generator",
 
   "https://github.com/romanz/electrs",
   "https://github.com/Blockstream/esplora",
