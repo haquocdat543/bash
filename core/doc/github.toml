@@ -68,6 +68,8 @@ blockchain = [
   # Bitcoin
   "https://github.com/bitcoin/bitcoin",
   "https://github.com/bitcoin/bips",
+  "https://github.com/klebs6/bitcoin-rs",
+  "https://github.com/GPTechinno/bm1397-protocol",
 
   "https://github.com/bitcoin-core/gui",
   "https://github.com/bitcoin-core/secp256k1",
