@@ -1,0 +1,13 @@
+alias rg2v='rg -P --color=always "(?<=^)[0-9a-fA-F]{8}"'
+alias rg2p='rg -P --color=always "(?<=^[0-9a-fA-F]{8})[0-9a-fA-F]{64}"'
+alias rg2m='rg -P --color=always "(?<=^[0-9a-fA-F]{72})[0-9a-fA-F]{64}"'
+alias rg2t='rg -P --color=always "(?<=^[0-9a-fA-F]{136})[0-9a-fA-F]{8}"'
+alias rg2b='rg -P --color=always "(?<=^[0-9a-fA-F]{144})[0-9a-fA-F]{8}"'
+alias rg2n='rg -P --color=always "(?<=^[0-9a-fA-F]{152})[0-9a-fA-F]{8}"'
+
+alias rgp2pk='rg "(?:21(?:02|03)[0-9a-fA-F]{64}|41(?:04)[0-9a-fA-F]{128})ac"'
+alias rgp2pkh='rg "76a914[0-9a-fA-F]{40}88ac"'
+alias rgp2sh='rg "a914[0-9a-fA-F]{40}87"'
+alias rgp2wpkh='rg "0014[0-9a-fA-F]{40}"'
+alias rgp2wsh='rg "0020[0-9a-fA-F]{64}"'
+alias rgp2tr='rg "5120[0-9a-fA-F]{64}"'
