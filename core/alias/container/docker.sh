@@ -17,6 +17,8 @@ alias dcpe='docker-compose exec'
 alias dcppl='docker-compose pull'
 
 alias dkl='docker logs'
+alias dklf='docker logs -f'
+alias dklnf='docker logs -n 100 -f'
 alias dklg='docker login'
 
 # [Network]
@@ -73,6 +75,7 @@ alias dritdap='docker run -it -u root -d --net host alpine'
 alias dritdct='docker run -it -u root -d --net host centos'
 alias dritdub='docker run -it -u root -d --net host ubuntu'
 alias dritdal='docker run -it -u root -d --net host archlinux'
+alias drs='docker restart'
 alias dvch='. $HOME/bash/core/script/dockerHostMount.sh'
 alias dritm='. $HOME/bash/core/script/dockerMount.sh'
 alias dvf='. $HOME/bash/core/script/dockerVolumeFrom.sh'
