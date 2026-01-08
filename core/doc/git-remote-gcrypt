@@ -1,0 +1,7 @@
+[remote "origin"]
+  url = gcrypt::git@github.com:haquocdat543/gcrypt.git
+  fetch = +refs/heads/*:refs/remotes/origin/*
+  gcrypt-participants = C5ED6726097757654298E6B75D29C50926CAB830 # FINGERPRINT
+[branch "develop"]
+  remote = origin
+  merge = refs/heads/develop
