@@ -54,6 +54,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/visualization/treesitter.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/git/git.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/git/github.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/git/gitlab.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/git/crypt.sh"
 
 # Cloud
 source "$(dirname "${BASH_SOURCE[0]}")/cloud/openstack.sh"
