@@ -26,7 +26,7 @@
       "useApt": true
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "ssh,git,build-essential,ninja-build,gcc,g++,make,python3,luarocks,nodejs,npm,xclip,xxd,ranger,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
+      "packages": "ssh,git,git-crypt,git-remote-gcrypt,build-essential,ninja-build,gcc,g++,make,python3,luarocks,nodejs,npm,xclip,xxd,ranger,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
       "upgradePackages": false
     },
     "ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
