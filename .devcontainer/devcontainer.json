@@ -35,7 +35,7 @@
     },
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
-      "PACKAGES": "github.com/cosmtrek/air@latest,github.com/jesseduffield/lazygit@latest"
+      "PACKAGES": "github.com/cosmtrek/air@latest,github.com/jesseduffield/lazygit@latest,github.com/getsops/sops/v3/cmd/sops@latest"
     },
     "ghcr.io/braun-daniel/devcontainer-features/fzf:1": {},
     "ghcr.io/devcontainers/features/rust:1": {
