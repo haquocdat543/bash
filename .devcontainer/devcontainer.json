@@ -2,7 +2,6 @@
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".",
-    "options": ["--platform=linux/amd64"],
     "args": {
       "BUILDKIT_PROGRESS": "plain"
     }
