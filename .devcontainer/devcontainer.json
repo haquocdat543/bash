@@ -38,7 +38,7 @@
     },
     "ghcr.io/duduribeiro/devcontainer-features/lunarvim:0": {},
     "ghcr.io/devcontainers/features/python:1": {
-      "toolsToInstall": "pynvim,conan"
+      "toolsToInstall": "pynvim,conan,vyper"
     },
     "ghcr.io/devcontainers/features/go:1": {},
     "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
