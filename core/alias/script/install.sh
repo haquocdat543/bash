@@ -5,6 +5,7 @@ alias iuv='curl -Ls https://astral.sh/uv/install.sh | sh'
 alias install-crypto-bitcoin='. $HOME/bash/core/script/crypto/bitcoin.sh'
 alias install-crypto-cgminer='. $HOME/bash/core/script/crypto/cgminer.sh'
 alias install-crypto-solana='. $HOME/bash/core/script/crypto/solana.sh'
+alias install-crypto-foundry='. $HOME/bash/core/script/crypto/foundry.sh'
 
 ### PKG
 alias install-pkg-bun='. $HOME/bash/core/script/pkg/bun.sh'
