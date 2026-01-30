@@ -14,4 +14,5 @@ alias ssh7='eval $(ssh-agent) && ssh-add $HOME/.ssh/crystal'
 alias gcu7='git config --global user.name "tungvv"'
 alias gce7='git config --global user.email "tungvv@vbatechs.com"'
 
+alias sshhost='. ${HOME}/bash/core/script/docker/host.docker.internal.sh'
 alias mapport='. ${HOME}/bash/core/script/docker/mapport.sh'
