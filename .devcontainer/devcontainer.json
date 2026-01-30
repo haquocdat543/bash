@@ -1,4 +1,5 @@
 {
+  "image": "devcontainer:v1",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".",
