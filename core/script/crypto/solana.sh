@@ -51,7 +51,9 @@ cargo binstall -y \
 	anchor-cli@0.32.1
 
 cargo install --locked \
-	solana-keygen --version 3.1.6 \
+	solana-keygen --version 3.1.6
+
+cargo install --locked \
 	cargo-build-sbf --version 3.1.0-beta.0
 
 cargo install \
