@@ -6,13 +6,6 @@
       "BUILDKIT_PROGRESS": "plain"
     }
   },
-  "forwardPorts": [3000],
-  "portsAttributes": {
-    "3000": {
-      "label": "Web App",
-      "onAutoForward": "openBrowser"
-    }
-  },
   "containerEnv": {
     "SHELL": "/bin/bash",
     "LANG": "en_US.UTF-8",
