@@ -18,7 +18,13 @@
     "type=bind,source=${env:HOME}/.vimrc,target=/root/.vimrc",
     "type=bind,source=${env:HOME}/.config/nvim,target=/root/.config/nvim",
     "type=bind,source=${env:HOME}/.bashrc,target=/root/.bashrc",
-    "type=bind,source=${env:HOME}/bash,target=/root/bash"
+    "type=bind,source=${env:HOME}/bash,target=/root/bash",
+    "type=volume,source=local,target=/root/.local",
+    "type=volume,source=cache,target=/root/.cache",
+    "type=volume,source=npm,target=/root/.npm",
+    "type=volume,source=nuget,target=/root/.nuget",
+    "type=volume,source=cargo,target=/root/.cargo",
+    "type=volume,source=go,target=/root/go"
   ],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
