@@ -22,3 +22,40 @@ alias devc9='
     --name ${NAME} \
     devcontainer:v2
 '
+
+alias devc10='
+  docker run -d \
+    --privileged \
+	  --cap-add=SYS_PTRACE \
+    --security-opt seccomp=unconfined \
+    --mount type=bind,source=${HOME}/.vimrc,target=/root/.vimrc \
+    --mount type=bind,source=${HOME}/.config/nvim,target=/root/.config/nvim \
+    --mount type=bind,source=${HOME}/.bashrc,target=/root/.bashrc \
+    --mount type=bind,source=${HOME}/bash,target=/root/bash \
+    --mount type=bind,source=$(pwd),target=/workspace/$(basename $(pwd)) \
+    --mount type=volume,source=dind-${NAME}-data,target=/var/lib/docker \
+    --name ${NAME} \
+    devcontainer:v1 \
+    /bin/sh -c "dockerd > /tmp/dockerd.log 2>&1 & sleep infinity"
+'
+alias devc11='
+  docker run -d \
+    --privileged \
+	  --cap-add=SYS_PTRACE \
+    --security-opt seccomp=unconfined \
+    --mount type=bind,source=${HOME}/.vimrc,target=/root/.vimrc \
+    --mount type=bind,source=${HOME}/.config/nvim,target=/root/.config/nvim \
+    --mount type=bind,source=${HOME}/.bashrc,target=/root/.bashrc \
+    --mount type=bind,source=${HOME}/bash,target=/root/bash \
+    --mount type=volume,source=local,target=/root/.local \
+    --mount type=volume,source=cache,target=/root/.cache \
+    --mount type=volume,source=npm,target=/root/.npm \
+    --mount type=volume,source=nuget,target=/root/.nuget \
+    --mount type=volume,source=cargo,target=/root/.cargo \
+    --mount type=volume,source=go,target=/root/go \
+    --mount type=bind,source=$(pwd),target=/workspace/$(basename $(pwd)) \
+    --mount type=volume,source=dind-${NAME}-data,target=/var/lib/docker \
+    --name ${NAME} \
+    devcontainer:v1 \
+    /bin/sh -c "dockerd > /tmp/dockerd.log 2>&1 & sleep infinity"
+'
