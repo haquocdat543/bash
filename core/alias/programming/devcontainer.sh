@@ -63,3 +63,4 @@ alias devc11='
     devcontainer:v1 \
     /bin/sh -c "dockerd > /tmp/dockerd.log 2>&1 & sleep infinity"
 '
+alias devc12='. $HOME/bash/core/script/devcontainer/exec.sh'
