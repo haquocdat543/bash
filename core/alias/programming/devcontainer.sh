@@ -49,7 +49,11 @@ alias devc11='
     --mount type=bind,source=${HOME}/bash,target=/root/bash \
     --mount type=volume,source=local,target=/root/.local \
     --mount type=volume,source=cache,target=/root/.cache \
+    --mount type=volume,source=nvm,target=/root/.nvm \
     --mount type=volume,source=npm,target=/root/.npm \
+    --mount type=volume,source=bun,target=/root/.bun \
+    --mount type=volume,source=yarn,target=/root/.yarn \
+    --mount type=volume,source=pnpm,target=/root/.pnpm \
     --mount type=volume,source=nuget,target=/root/.nuget \
     --mount type=volume,source=cargo,target=/root/.cargo \
     --mount type=volume,source=go,target=/root/go \
