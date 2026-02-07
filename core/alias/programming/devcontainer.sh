@@ -43,7 +43,6 @@ alias devc11='
     --privileged \
 	  --cap-add=SYS_PTRACE \
     --security-opt seccomp=unconfined \
-    --mount type=bind,source=${HOME}/.vimrc,target=/root/.vimrc \
     --mount type=bind,source=${HOME}/.config/nvim,target=/root/.config/nvim \
     --mount type=bind,source=${HOME}/.bashrc,target=/root/.bashrc \
     --mount type=bind,source=${HOME}/bash,target=/root/bash \
