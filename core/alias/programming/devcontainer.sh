@@ -53,6 +53,7 @@ alias devc11='
     --mount type=volume,source=yarn,target=/root/.yarn \
     --mount type=volume,source=pnpm,target=/root/.pnpm \
     --mount type=volume,source=nuget,target=/root/.nuget \
+    --mount type=volume,source=conan,target=/root/.conan \
     --mount type=volume,source=cargo,target=/root/.cargo \
     --mount type=volume,source=go,target=/root/go \
     --mount type=bind,source=$(pwd),target=/workspace/$(basename $(pwd)) \
