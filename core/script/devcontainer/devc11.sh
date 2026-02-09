@@ -15,8 +15,20 @@ docker run -d \
 	--mount type=volume,source=yarn,target=/root/.yarn \
 	--mount type=volume,source=pnpm,target=/root/.pnpm \
 	--mount type=volume,source=nuget,target=/root/.nuget \
+	--mount type=volume,source=dotnet,target=/root/.dotnet \
+	--mount type=volume,source=maven,target=/root/.m2 \
+	--mount type=volume,source=gradle,target=/root/.gradle \
+	--mount type=volume,source=ivy,target=/root/.ivy2 \
+	--mount type=volume,source=sdkman,target=/root/.sdkman \
+	--mount type=volume,source=composer,target=/root/.composer \
+	--mount type=volume,source=luarocks,target=/root/.luarocks \
+	--mount type=volume,source=pip,target=/root/.pip \
+	--mount type=volume,source=gem,target=/root/.gem \
+	--mount type=volume,source=stack,target=/root/.stack \
+	--mount type=volume,source=cabal,target=/root/.cabal \
 	--mount type=volume,source=conan,target=/root/.conan2 \
 	--mount type=volume,source=cargo,target=/root/.cargo \
+	--mount type=volume,source=rustup,target=/root/.rustup \
 	--mount type=volume,source=go,target=/root/go \
 	--mount type=bind,source=$(pwd),target=/workspace/$(basename $(pwd)) \
 	--mount type=volume,source=dind-${NAME}-data,target=/var/lib/docker \
