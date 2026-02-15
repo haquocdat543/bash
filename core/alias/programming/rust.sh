@@ -20,7 +20,7 @@ alias cgin='cargo init'
 
 alias cgb='cargo build'
 alias cgbr='cargo build --release'
-alias cgch='cargo check'
+alias cgck='cargo check'
 alias cgt='cargo test'
 alias cgtr='cargo tree'
 alias cgdoc='cargo doc'
