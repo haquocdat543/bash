@@ -7,6 +7,7 @@ docker run -d \
 	--mount type=bind,source=${HOME}/.config/nvim,target=/root/.config/nvim \
 	--mount type=bind,source=${HOME}/.bashrc,target=/root/.bashrc \
 	--mount type=bind,source=${HOME}/bash,target=/root/bash \
+	--mount type=bind,source=${HOME}/.config/ranger,target=/root/.config/ranger \
 	--mount type=volume,source=local,target=/root/.local \
 	--mount type=volume,source=cache,target=/root/.cache \
 	--mount type=volume,source=nvm,target=/root/.nvm \
