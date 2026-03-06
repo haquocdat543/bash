@@ -1,4 +1,5 @@
 # linux
+source "$(dirname "${BASH_SOURCE[0]}")/linux/tip.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/linux/basic.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/linux/ps.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/linux/su.sh"
