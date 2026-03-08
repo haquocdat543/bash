@@ -40,3 +40,4 @@ alias virs='vim *.rs'
 
 # [Watch]
 alias cgw='cargo watch'
+alias cge='cargo expand' # cargo expand --lib share::dto
