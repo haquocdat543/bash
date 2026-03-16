@@ -33,7 +33,7 @@
       "useApt": true
     },
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "ssh,git,git-crypt,git-remote-gcrypt,build-essential,ninja-build,gcc,g++,make,ruby-all,python3,luarocks,nodejs,npm,xclip,xxd,ranger,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
+      "packages": "gnupg,ssh,git,git-crypt,git-remote-gcrypt,build-essential,ninja-build,gcc,g++,make,ruby-all,python3,luarocks,nodejs,npm,xclip,xxd,ranger,libtool,autoconf,automake,cmake,libncurses5-dev,gettext,libncurses-dev,libtinfo-dev",
       "upgradePackages": true
     },
     "ghcr.io/devcontainers/features/java:1": {},
