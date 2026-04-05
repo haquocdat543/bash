@@ -1,4 +1,4 @@
 ### APT
 alias ai='apt install -y'
 alias au='apt update -y'
-alias as='apt search'
+alias apts='apt search'
