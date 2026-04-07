@@ -11,6 +11,7 @@ docker run -d \
 	--mount type=bind,source=${HOME}/.local/share/blesh,target=/root/.local/share/blesh \
 	--mount type=bind,source=${HOME}/.config/ranger,target=/root/.config/ranger \
 	--mount type=bind,source=${HOME}/.config/bat,target=/root/.config/bat \
+	--mount type=bind,source=${HOME}/.password-store,target=/root/.password-store \
 	--mount type=bind,source=$(pwd),target=/workspace/$(basename $(pwd)) \
 	--mount type=volume,source=dind-${NAME}-data,target=/var/lib/docker \
 	--name ${NAME} \
