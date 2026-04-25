@@ -16,3 +16,6 @@ alias devc9='. $HOME/bash/core/script/devcontainer/devc9.sh'
 alias devc10='. $HOME/bash/core/script/devcontainer/devc10.sh'
 alias devc11='. $HOME/bash/core/script/devcontainer/devc11.sh'
 alias devc12='. $HOME/bash/core/script/devcontainer/devc12.sh'
+
+alias devc13='. $HOME/bash/core/script/devcontainer/devc11.sh $(basename $(pwd))'
+alias devc14='docker exec -it $(basename $(pwd)) bash'
