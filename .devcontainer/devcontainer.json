@@ -1,12 +1,5 @@
 {
-  "image": "devcontainer:v1",
-  "build": {
-    "dockerfile": "./Dockerfile",
-    "context": ".",
-    "args": {
-      "BUILDKIT_PROGRESS": "plain"
-    }
-  },
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "containerEnv": {
     "SHELL": "/bin/bash",
     "LANG": "en_US.UTF-8",
