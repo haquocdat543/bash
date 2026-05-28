@@ -53,7 +53,7 @@
       "packages": "zoxide,ripgrep,fd-find,sd,exa,bat,rustowl"
     },
     "ghcr.io/devcontainers-extra/features/bash-command:1": {
-      "command": "luarocks install nvim-nio && luarocks install mimetypes && luarocks install xml2lua && luarocks install fidget.nvim && sed -i \"s|root|xxx|g\" /usr/lib/python3/dist-packages/ranger/core/main.py"
+      "command": "luarocks install nvim-nio && luarocks install mimetypes && luarocks install xml2lua && luarocks install fidget.nvim"
     },
     "ghcr.io/devcontainers/features/dotnet:2": {}
   },
