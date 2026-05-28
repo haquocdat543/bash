@@ -69,7 +69,8 @@
     "ghcr.io/azutake/devcontainer-features/go-packages-install",
     "ghcr.io/devcontainers/features/rust",
     "ghcr.io/lee-orr/rusty-dev-containers/cargo-binstall",
-    "ghcr.io/devcontainers/features/dotnet"
+    "ghcr.io/devcontainers/features/dotnet",
+    "ghcr.io/devcontainers-extra/features/bash-command:1"
   ],
   "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && git config --global init.defaultBranch develop",
