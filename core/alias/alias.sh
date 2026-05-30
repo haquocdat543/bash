@@ -19,6 +19,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/navigation/ripgrep.sh"
 # OS
 source "$(dirname "${BASH_SOURCE[0]}")/os/os.sh"
 
+# Network
+source "$(dirname "${BASH_SOURCE[0]}")/network/airport.sh"
+
 # Package manager
 source "$(dirname "${BASH_SOURCE[0]}")/package/nix.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/package/brew.sh"
