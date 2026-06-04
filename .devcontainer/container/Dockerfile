@@ -1,10 +1,6 @@
 FROM ubuntu:latest
 
-WORKDIR /workspace
-
 ENV SHELL="/bin/bash"
-ENV LANG="en_US.UTF-8"
-ENV LC_ALL="en_US.UTF-8"
 ENV EDITOR="nvim"
 ENV TERM="xterm-256color"
 
