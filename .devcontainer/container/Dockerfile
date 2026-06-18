@@ -6,7 +6,7 @@ ENV TERM="xterm-256color"
 
 ENV PATH="/usr/local/go/bin:${PATH}"
 
-RUN apt update -y && apt install -y curl git
+RUN apt update -y && apt install -y curl git ca-certificates
 
 # APT
 RUN git clone https://github.com/rocker-org/devcontainer-features \
@@ -15,7 +15,7 @@ RUN git clone https://github.com/rocker-org/devcontainer-features \
 
 # Docker/Java/Dotnet/Python
 RUN git clone https://github.com/devcontainers/features \
-	&& bash features/src/docker-in-docker/install.sh \
+	&& MOBY="false" bash features/src/docker-in-docker/install.sh \
 	# && cd features/src/dotnet && bash install.sh && cd /tmp \
 	&& bash features/src/java/install.sh \
 	&& TOOLSTOINSTALL="pynvim,conan,vyper" bash features/src/python/install.sh \
