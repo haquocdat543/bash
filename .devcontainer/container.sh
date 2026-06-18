@@ -1,0 +1,9 @@
+bash env.sh
+bash apt.sh
+bash eget.sh
+bash mise.sh
+bash uv.sh
+bash go.sh
+bash rust.sh
+bash lua.sh
+bash docker-in-docker.sh
