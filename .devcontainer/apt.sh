@@ -24,6 +24,7 @@ apt update -y &&
 		autoconf \
 		automake \
 		cmake \
+		lsof \
 		libncurses5-dev \
 		gettext \
 		libncurses-dev \
