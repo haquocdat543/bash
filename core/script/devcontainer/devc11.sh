@@ -12,6 +12,7 @@ docker run -d \
 	--mount type=bind,source=${HOME}/.local/bin/mise,target=/root/.local/bin/mise \
 	--mount type=bind,source=${HOME}/.config/ranger,target=/root/.config/ranger \
 	--mount type=bind,source=${HOME}/.config/bat,target=/root/.config/bat \
+	--mount type=bind,source=${HOME}/.config/mise,target=/root/.config/mise \
 	--mount type=volume,source=local,target=/root/.local \
 	--mount type=volume,source=cache,target=/root/.cache \
 	--mount type=volume,source=nvm,target=/root/.nvm \
