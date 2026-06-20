@@ -7,13 +7,37 @@ curl https://mise.run | sh &&
 		dotnet@latest \
 		golang@latest \
 		ruby@3.3.9 \
+		cabal@latest \
+		zig@latest \
 		rust@latest \
 		cargo-binstall@latest \
 		lua@5.1 \
 		opentofu@latest \
 		terraform@latest \
 		terragrunt@latest \
+		spacectl@latest \
 		aws-cli@latest \
+		azure-cli@latest \
+		gcloud@latest \
+		fzf@latest \
+		gh@latest \
+		gitleaks@latest \
+		jj@latest \
+		k3s@latest \
+		k9s@latest \
 		kubectl@latest \
 		helm@latest \
-		neovim@latest
+		helm-diff@latest \
+		istioctl@latest \
+		krew@latest \
+		kubens@latest \
+		kubectx@latest \
+		ksops@latest \
+		kustomize@latest \
+		neovim@latest \
+		zellij@latest \
+		vscode-cli@latest \
+		jq@latest \
+		yq@latest \
+		opencode@latest \
+		claude@latest
