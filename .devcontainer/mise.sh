@@ -3,6 +3,10 @@ curl https://mise.run | sh &&
 		uv@latest \
 		python@3.13 \
 		node@latest \
+		npm@latest \
+		pnpm@latest \
+		yarn@latest \
+		bun@latest \
 		java@latest \
 		maven@latest \
 		dotnet@latest \
