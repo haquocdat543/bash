@@ -4,6 +4,7 @@ curl https://mise.run | sh &&
 		python@3.13 \
 		node@latest \
 		java@latest \
+		maven@latest \
 		dotnet@latest \
 		golang@latest \
 		ruby@3.3.9 \
