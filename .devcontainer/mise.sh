@@ -39,7 +39,7 @@ curl https://mise.run | sh &&
 		kubectx@latest \
 		ksops@latest \
 		kustomize@latest \
-		neovim@latest \
+		neovim@0.11.7 \
 		zellij@latest \
 		vscode-cli@latest \
 		jq@latest \
